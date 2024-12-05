@@ -1,12 +1,8 @@
-import { FormEvent } from 'react';
+import { FormEvent, useState } from 'react';
 import { Translations } from '../App';
 
 const groupId = import.meta.env.VITE_GROUP_ID;
 const botId = import.meta.env.VITE_BOT_ID;
-
-console.log(groupId);
-console.log(botId);
-
 interface Props {
 	isOpen: boolean;
 	onClose: () => void;
@@ -20,17 +16,13 @@ export const ContactModal = ({
 	translations,
 	language,
 }: Props) => {
+	const [name, setName] = useState('');
+	const [message, setMessage] = useState('');
+
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		console.log(e);
-		// const name = e.target.name.value;
-		// const message = e.target.message.value;
-		const target = e.target as typeof e.target & {
-			name: { value: string };
-			message: { value: string };
-		};
 		const telegramUrl = `https://api.telegram.org/bot${botId}/sendMessage`;
-		const text = `New message from: ${target.name}\nMessage: ${target.message}`;
+		const text = `New message from: ${name}\nMessage: ${message}`;
 
 		fetch(telegramUrl, {
 			method: 'POST',
@@ -48,32 +40,53 @@ export const ContactModal = ({
 
 				alert(translations[language].success);
 				onClose();
-				target.name.value = '';
-				target.message.value = '';
+				setName('');
+				setMessage('');
 			})
 			.catch(error => {
 				console.error('Error:', error);
 				alert(translations[language].error);
-				target.name.value = '';
-				target.message.value = '';
+				setName('');
+				setMessage('');
 			});
 	};
 
 	return (
 		<div className={`modal-overlay ${isOpen ? 'active' : ''}`}>
 			<div className='modal'>
-				<button className='modal-close' onClick={onClose}>
+				<button
+					className='modal-close'
+					onClick={() => {
+						onClose();
+						setName('');
+						setMessage('');
+					}}
+				>
 					×
 				</button>
 				<h2>{translations[language].contactForm}</h2>
 				<form className='contact-form' onSubmit={handleSubmit}>
 					<div className='form-group'>
 						<label htmlFor='name'>{translations[language].name}</label>
-						<input type='text' id='name' name='name' required />
+						<input
+							type='text'
+							id='name'
+							name='name'
+							required
+							value={name}
+							onChange={e => setName(e.target.value)}
+						/>
 					</div>
 					<div className='form-group'>
 						<label htmlFor='message'>{translations[language].message}</label>
-						<textarea id='message' name='message' rows={4} required></textarea>
+						<textarea
+							id='message'
+							name='message'
+							rows={4}
+							required
+							value={message}
+							onChange={e => setMessage(e.target.value)}
+						></textarea>
 					</div>
 					<button type='submit' className='submit-button'>
 						{translations[language].send}
