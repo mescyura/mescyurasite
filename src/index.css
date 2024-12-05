@@ -290,7 +290,6 @@ h1 {
 	}
 
 	.social-links a {
-		pointer-events: none;
 		font-size: 1rem;
 		margin: 0 0.5rem;
 	}
