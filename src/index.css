@@ -1,0 +1,253 @@
+:root {
+	--primary: #ffffff;
+	--secondary: #e4e4e4;
+	--text: #1f1f1f;
+	--secondary-text: #ffffff;
+}
+
+:root[data-theme='dark'] {
+	--primary: #1a1a1a;
+	--secondary: #333131;
+	--text: #ffffff;
+	--secondary-text: #1f1f1f;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
+}
+
+body {
+	overscroll-behavior: none;
+	background: var(--secondary-text);
+	color: var(--text);
+	line-height: 1.6;
+	transition: all 0.3s ease;
+}
+
+.header {
+	backdrop-filter: blur(16px);
+	width: 100%;
+	padding: 1rem 1.5rem;
+	position: fixed;
+	z-index: 99;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.language-toggle,
+.theme-toggle {
+	padding: 0.5rem 1rem;
+	border-radius: 25px;
+	border: 2px solid var(--text);
+	background: transparent;
+	color: var(--text);
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.language-toggle:hover,
+.theme-toggle:hover {
+	background: var(--text);
+	color: var(--secondary-text);
+}
+
+.hero {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	overflow: hidden;
+	/* padding: 2rem 0; */
+}
+
+.hero::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(135deg, var(--primary), var(--secondary));
+	clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+	z-index: -1;
+	transition: all 0.3s ease;
+}
+
+.content {
+	max-width: 1200px;
+	padding: 4.5rem 2rem 2rem;
+	color: var(--text);
+	text-align: center;
+}
+
+.profile-image {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	margin: 0 auto 2rem;
+	border: 4px solid var(--text);
+	object-fit: cover;
+	animation: fadeIn 1s ease-out;
+}
+
+h1 {
+	font-size: 3.5rem;
+	margin-bottom: 1rem;
+	animation: slideDown 1s ease-out;
+}
+
+.title {
+	font-size: 1.5rem;
+	margin-bottom: 2rem;
+	animation: slideUp 1s ease-out;
+}
+
+.skills {
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+	flex-wrap: wrap;
+	margin: 2rem 0;
+	font-size: 1rem;
+}
+
+.skill-item {
+	padding: 1rem 2rem;
+	background: #313131;
+	border-radius: 50px;
+	backdrop-filter: blur(5px);
+	transition: transform 0.3s ease;
+	color: white;
+}
+
+.skill-item:hover {
+	transform: translateY(-5px);
+	background: #484848;
+}
+
+.cta-button {
+	display: inline-block;
+	padding: 1rem 2rem;
+	background: var(--text);
+	color: var(--secondary-text);
+	text-decoration: none;
+	border-radius: 50px;
+	font-weight: bold;
+	transition: transform 0.3s ease;
+	margin: 1rem;
+	font-size: 1rem;
+}
+
+.cta-button:hover {
+	transform: scale(1.05);
+}
+
+.social-links {
+	margin-top: 2rem;
+}
+
+.social-links a {
+	color: white;
+	margin: 0 1rem;
+	font-size: 1.5rem;
+	transition: all 0.3s ease;
+	position: relative;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 50%;
+	background: var(--text);
+}
+
+.social-links a i {
+	background: linear-gradient(45deg, var(--primary) 50%, var(--secondary) 50%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+
+.social-links a:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: scale(0.9);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes slideDown {
+	from {
+		transform: translateY(-100px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slideUp {
+	from {
+		transform: translateY(100px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@media (max-width: 768px) {
+	.content {
+		max-width: 1200px;
+		padding: 4.5rem 1rem 1rem;
+	}
+
+	h1 {
+		font-size: 1.5rem;
+	}
+	.title {
+		font-size: 1rem;
+	}
+
+	.skills {
+		gap: 1rem;
+		font-size: 0.65rem;
+		line-height: 1;
+	}
+
+	.skill-item {
+		padding: 0.8rem 1.5rem;
+	}
+
+	.cta-button {
+		font-size: 0.65rem;
+		line-height: 1;
+		margin: 0.5rem;
+	}
+
+	.profile-image {
+		width: 150px;
+		height: 150px;
+	}
+
+	.social-links a {
+		font-size: 1rem;
+		margin: 0 0.5rem;
+	}
+}
