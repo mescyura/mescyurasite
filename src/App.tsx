@@ -35,12 +35,19 @@ const translations: Translations = {
 	},
 };
 
-const skills: string[] = [
-	'HTML5',
-	'CSS3',
-	'JavaScript',
-	'React',
-	'Responsive Design',
+export interface Skills {
+	text: string;
+	icon: string;
+	color: string;
+}
+
+const skills: Skills[] = [
+	{ text: 'HTML5', icon: 'html5', color: '#dd683b' },
+	{ text: 'CSS3', icon: 'css3', color: '#3f69e9' },
+	{ text: 'JavaScript', icon: 'js', color: '#ebd94d' },
+	{ text: 'React', icon: 'react', color: '#79c4da' },
+	{ text: 'Figma', icon: 'figma', color: '#63cf8d' },
+	{ text: 'Responsive Design', icon: 'code', color: '#ef7e6e' },
 ];
 
 interface SocialLinks {
@@ -112,7 +119,12 @@ function App() {
 
 					<div className='skills'>
 						{skills.map((skill, index) => (
-							<SkillItem key={index} skill={skill} />
+							<SkillItem
+								key={index}
+								text={skill.text}
+								icon={skill.icon}
+								color={skill.color}
+							/>
 						))}
 					</div>
 
