@@ -4,6 +4,7 @@ import { LanguageToggle } from './ui/LanguageToggle';
 import { ThemeToggle } from './ui/ThemeToggle';
 import { SkillItem } from './components/SkillItem';
 import { SocialLink } from './components/SocialLink';
+import { ContactModal } from './components/ContactModal';
 
 export interface Translations {
 	[key: string]: {
@@ -13,6 +14,12 @@ export interface Translations {
 		contact: string;
 		darkMode: string;
 		lightMode: string;
+		contactForm: string;
+		name: string;
+		message: string;
+		send: string;
+		success: string;
+		error: string;
 	};
 }
 
@@ -24,6 +31,12 @@ const translations: Translations = {
 		contact: 'Contact Me',
 		darkMode: 'Dark Mode',
 		lightMode: 'Light Mode',
+		contactForm: 'Contact Form',
+		name: 'Telegram nickname',
+		message: 'Message',
+		send: 'Send Message',
+		success: 'Message sent successfully!',
+		error: 'Failed to send message. Please try again.',
 	},
 	ua: {
 		title: 'Фронтенд Розробник',
@@ -32,6 +45,12 @@ const translations: Translations = {
 		contact: "Зв'язатися",
 		darkMode: 'Темна Тема',
 		lightMode: 'Світла Тема',
+		contactForm: "Форма Зв'язку",
+		name: 'Нік в телеграм',
+		message: 'Повідомлення',
+		send: 'Надіслати',
+		success: 'Повідомлення надіслано!',
+		error: 'Помилка. Спробуйте ще раз',
 	},
 };
 
@@ -63,6 +82,8 @@ const socialLinks: SocialLinks[] = [
 ];
 
 function App() {
+	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
 	const [isDark, setIsDark] = useState<boolean>(() => {
 		const savedTheme = localStorage.getItem('theme');
 		return savedTheme === 'dark';
@@ -129,12 +150,12 @@ function App() {
 					</div>
 
 					<div>
-						<a href='https://github.com' className='cta-button'>
-							{translations[language].viewWork}
-						</a>
-						<a href='mailto:mescyura@gmail.com' className='cta-button'>
+						<button className='cta-button'>
+							<a href='https://github.com'>{translations[language].viewWork}</a>
+						</button>
+						<button onClick={() => setIsModalOpen(true)} className='cta-button'>
 							{translations[language].contact}
-						</a>
+						</button>
 					</div>
 
 					<div className='social-links'>
@@ -144,6 +165,12 @@ function App() {
 					</div>
 				</div>
 			</section>
+			<ContactModal
+				isOpen={isModalOpen}
+				onClose={() => setIsModalOpen(false)}
+				translations={translations}
+				language={language}
+			/>
 		</>
 	);
 }
