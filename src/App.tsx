@@ -18,39 +18,51 @@ export interface Translations {
 		name: string;
 		message: string;
 		send: string;
+		close: string;
 		success: string;
 		error: string;
+		tryAgain: string;
+		allGood: string;
+		ok: string;
 	};
 }
 
 const translations: Translations = {
 	en: {
 		title: 'Frontend Developer',
-		subtitle: 'Crafting Beautiful & Interactive Web Experiences',
+		subtitle: 'Crafting beautiful & Interactive web experiences',
 		viewWork: 'View My Work',
 		contact: 'Contact Me',
-		darkMode: 'Dark Mode',
-		lightMode: 'Light Mode',
-		contactForm: 'Contact Form',
+		darkMode: 'Dark mode',
+		lightMode: 'Light mode',
+		contactForm: 'Contact form',
 		name: 'Telegram nickname',
 		message: 'Message',
-		send: 'Send Message',
+		send: 'Send message',
+		close: 'Close',
 		success: 'Message sent successfully!',
-		error: 'Failed to send message. Please try again.',
+		error: 'Error sending message',
+		tryAgain: 'Please try again later.',
+		allGood: 'We will contact you soon',
+		ok: 'OK',
 	},
 	ua: {
 		title: 'Фронтенд Розробник',
-		subtitle: 'Створюю Красиві та Інтерактивні Веб-Рішення',
-		viewWork: 'Мої Роботи',
+		subtitle: 'Створюю красиві та Інтерактивні веб-рішення',
+		viewWork: 'Мої роботи',
 		contact: "Зв'язатися",
-		darkMode: 'Темна Тема',
-		lightMode: 'Світла Тема',
+		darkMode: 'Темна тема',
+		lightMode: 'Світла тема',
 		contactForm: "Форма Зв'язку",
 		name: 'Нік в телеграм',
 		message: 'Повідомлення',
 		send: 'Надіслати',
-		success: 'Повідомлення надіслано!',
-		error: 'Помилка. Спробуйте ще раз',
+		close: 'Закрити',
+		success: 'Повідомлення успішно надіслано!',
+		error: 'Помилка надсилання',
+		tryAgain: 'Будь ласка, спробуйте пізніше.',
+		allGood: 'З вами звяжуться незабаром',
+		ok: 'ОК',
 	},
 };
 
