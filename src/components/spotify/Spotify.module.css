@@ -1,0 +1,104 @@
+.spotify {
+	margin-block: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
+	height: 40px;
+}
+
+.spotify h2 {
+	font-size: 18px;
+	font-weight: 400;
+}
+
+.spotify img {
+	width: 40px;
+	height: 40px;
+
+	object-fit: contain;
+}
+
+.spotify .info {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: start;
+	font-size: 14px;
+}
+
+.spotify div a {
+	color: var(--text);
+}
+
+.spotify div p {
+	font-size: 12px;
+	color: #b3b3b3;
+}
+
+.playing {
+	display: flex;
+	gap: 3px;
+	height: 100%;
+	text-align: center;
+	font-size: 10px;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+.playing > div {
+	background-color: #56b35f;
+	height: 100%;
+	width: 3px;
+	display: inline-block;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+	-webkit-animation: wavy 1s ease infinite forwards;
+	animation: wavy 1s ease infinite forwards;
+	-webkit-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.33);
+}
+.playing .rect2 {
+	-webkit-animation-delay: 0.25s;
+	animation-delay: 0.25s;
+}
+.playing .rect3 {
+	-webkit-animation-delay: 0.5s;
+	animation-delay: 0.5s;
+}
+.playing .rect4 {
+	-webkit-animation-delay: 0.75s;
+	animation-delay: 0.75s;
+}
+.playing .rect5 {
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+}
+@-webkit-keyframes wavy {
+	0% {
+		-webkit-transform: scaleY(1);
+		transform: scaleY(1);
+	}
+	50% {
+		-webkit-transform: scaleY(0.6);
+		transform: scaleY(0.6);
+	}
+	100% {
+		-webkit-transform: scaleY(1);
+		transform: scaleY(1);
+	}
+}
+@keyframes wavy {
+	0% {
+		-webkit-transform: scaleY(1);
+		transform: scaleY(1);
+	}
+	50% {
+		-webkit-transform: scaleY(0.6);
+		transform: scaleY(0.6);
+	}
+	100% {
+		-webkit-transform: scaleY(1);
+		transform: scaleY(1);
+	}
+}

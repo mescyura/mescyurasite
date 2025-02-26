@@ -1,0 +1,44 @@
+.header {
+	backdrop-filter: blur(16px);
+	width: 100%;
+	padding: 1rem 1.5rem;
+	position: fixed;
+	z-index: 99;
+	display: flex;
+	justify-content: start;
+	gap: 12px;
+	align-items: center;
+}
+
+.nav {
+	color: var(--text);
+	display: flex;
+	gap: 12px;
+	margin-right: auto;
+}
+
+.nav a {
+	position: relative;
+	color: var(--text);
+
+	transition: 0.3s all ease-in-out;
+}
+
+.nav a:before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	height: 1.5px;
+	width: 100%;
+	background: var(--text);
+	border-radius: 50px;
+	transform: scalex(0);
+	transition: transform 0.2s linear;
+}
+
+.nav a:hover {
+	color: var(--color-blue);
+}
+.nav a:hover:before {
+	transform: scale(1);
+}

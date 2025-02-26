@@ -1,0 +1,15 @@
+.languageToggle {
+	user-select: none;
+	padding: 0.5rem 1rem;
+	border-radius: 25px;
+	border: 2px solid var(--text);
+	background: transparent;
+	color: var(--text);
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.languageToggle:hover {
+	background: var(--text);
+	color: var(--secondary-text);
+}

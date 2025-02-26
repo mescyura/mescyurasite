@@ -1,0 +1,54 @@
+{
+	"translations": {
+		"en": {
+			"title": "Frontend Developer",
+			"subtitle": "Crafting beautiful & Interactive web experiences",
+			"viewWork": "View My Work",
+			"contact": "Contact Me",
+			"darkMode": "Dark mode",
+			"lightMode": "Light mode",
+			"contactForm": "Contact form",
+			"name": "Telegram nickname",
+			"message": "Message",
+			"send": "Send message",
+			"close": "Close",
+			"success": "Message sent successfully!",
+			"error": "Error sending message",
+			"tryAgain": "Please try again later.",
+			"allGood": "We will contact you soon",
+			"ok": "OK"
+		},
+		"ua": {
+			"title": "Фронтенд Розробник",
+			"subtitle": "Створюю красиві та Інтерактивні веб-рішення",
+			"viewWork": "Мої роботи",
+			"contact": "Зв'язатися",
+			"darkMode": "Темна тема",
+			"lightMode": "Світла тема",
+			"contactForm": "Форма Зв'язку",
+			"name": "Нік в телеграм",
+			"message": "Повідомлення",
+			"send": "Надіслати",
+			"close": "Закрити",
+			"success": "Повідомлення успішно надіслано!",
+			"error": "Помилка надсилання",
+			"tryAgain": "Будь ласка, спробуйте пізніше.",
+			"allGood": "З вами звяжуться незабаром",
+			"ok": "ОК"
+		}
+	},
+	"skills": [
+		{ "text": "HTML5", "icon": "html5", "color": "#dd683b" },
+		{ "text": "CSS3", "icon": "css3", "color": "#3f69e9" },
+		{ "text": "JavaScript", "icon": "js", "color": "#ebd94d" },
+		{ "text": "React", "icon": "react", "color": "#79c4da" },
+		{ "text": "Figma", "icon": "figma", "color": "#63cf8d" },
+		{ "text": "Responsive Design", "icon": "code", "color": "#ef7e6e" }
+	],
+	"socialLinks": [
+		{ "href": "https://github.com/mescyura", "icon": "github" },
+		{ "href": "https://linkedin.com/in/yura-holyda", "icon": "linkedin" },
+		{ "href": "https://twitter.com/mescyuraa", "icon": "twitter" },
+		{ "href": "https://t.me/mescyura", "icon": "telegram" }
+	]
+}

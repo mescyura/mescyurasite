@@ -1,4 +1,5 @@
-import { Translations } from '../App';
+import { Translations } from '../../interfaces';
+import classes from './ThemeToggle.module.css';
 
 interface Props {
 	toggleTheme: () => void;
@@ -14,7 +15,7 @@ export const ThemeToggle = ({
 	language,
 }: Props) => {
 	return (
-		<button className='theme-toggle' onClick={toggleTheme}>
+		<button className={classes.themeToggle} onClick={toggleTheme}>
 			{isDark
 				? translations[language].lightMode
 				: translations[language].darkMode}

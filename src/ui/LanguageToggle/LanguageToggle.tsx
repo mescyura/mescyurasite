@@ -1,3 +1,5 @@
+import classes from './LanguageToggle.module.css';
+
 interface Props {
 	toggleLanguage: () => void;
 	language: string;
@@ -5,7 +7,7 @@ interface Props {
 
 export const LanguageToggle = ({ toggleLanguage, language }: Props) => {
 	return (
-		<button className='language-toggle' onClick={toggleLanguage}>
+		<button className={classes.languageToggle} onClick={toggleLanguage}>
 			{language.toUpperCase()}
 		</button>
 	);

@@ -1,4 +1,5 @@
-import { Translations } from '../App';
+import { Translations } from '../../interfaces';
+import classes from './FeedbackModal.module.css';
 
 interface Props {
 	type: 'success' | 'error';
@@ -9,12 +10,11 @@ interface Props {
 
 export const FeedbackModal = ({
 	type,
-
 	onClose,
 	translations,
 	language,
 }: Props) => (
-	<div className={`feedback-modal ${type}`}>
+	<div className={`${classes.feedbackModal} ${type}`}>
 		<h3>{translations[language][type]}</h3>
 		<p>
 			{type === 'success'

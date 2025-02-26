@@ -1,6 +1,9 @@
 import { FormEvent, useState } from 'react';
-import { Translations } from '../App';
+import { Translations } from '../../interfaces';
+
 import { FeedbackModal } from './FeedbackModal';
+
+import classes from './ContactModal.module.css';
 
 const groupId = import.meta.env.VITE_GROUP_ID;
 const botId = import.meta.env.VITE_BOT_ID;
@@ -70,13 +73,13 @@ export const ContactModal = ({
 	};
 
 	return (
-		<div className={`modal-overlay ${isOpen ? 'active' : ''}`}>
+		<div className={`${classes.modalOverlay} ${isOpen ? classes.active : ''}`}>
 			{feedback ? (
 				''
 			) : (
-				<div className='modal'>
+				<div className={classes.modal}>
 					<button
-						className='modal-close'
+						className={classes.modalClose}
 						onClick={() => {
 							onClose();
 							setName('');
@@ -86,8 +89,8 @@ export const ContactModal = ({
 						×
 					</button>
 					<h2>{translations[language].contactForm}</h2>
-					<form className='contact-form' onSubmit={handleSubmit}>
-						<div className='form-group'>
+					<form className={classes.contactForm} onSubmit={handleSubmit}>
+						<div className={classes.formGroup}>
 							<label htmlFor='name'>{translations[language].name}</label>
 							<input
 								type='text'
@@ -98,7 +101,7 @@ export const ContactModal = ({
 								onChange={e => setName(e.target.value)}
 							/>
 						</div>
-						<div className='form-group'>
+						<div className={classes.formGroup}>
 							<label htmlFor='message'>{translations[language].message}</label>
 							<textarea
 								id='message'
@@ -109,7 +112,7 @@ export const ContactModal = ({
 								onChange={e => setMessage(e.target.value)}
 							></textarea>
 						</div>
-						<button type='submit' className='submit-button'>
+						<button type='submit' className={classes.submitButton}>
 							{translations[language].send}
 						</button>
 					</form>
