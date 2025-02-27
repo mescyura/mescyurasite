@@ -19,11 +19,7 @@ export const Home = ({ translations, language }: Props) => {
 		<>
 			<section className='hero'>
 				<div className='content'>
-					<img
-						src={img}
-						alt='Professional headshot of a young man with short dark hair wearing a dark crewneck sweatshirt'
-						className='profile-image'
-					/>
+					<img src={img} alt='avatar' className='profile-image' />
 					<h1>{translations[language].title}</h1>
 					<p className='title'>{translations[language].subtitle}</p>
 

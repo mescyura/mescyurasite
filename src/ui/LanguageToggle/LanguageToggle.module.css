@@ -1,15 +1,19 @@
 .languageToggle {
+	min-width: 40px;
+	font-size: 14px;
+	line-height: 20px;
 	user-select: none;
-	padding: 0.5rem 1rem;
-	border-radius: 25px;
-	border: 2px solid var(--text);
+	padding: 0.5rem;
+	border-radius: 0.375rem;
+	/* border: 2px solid var(--text); */
+	border: none;
 	background: transparent;
 	color: var(--text);
 	cursor: pointer;
 	transition: all 0.3s ease;
+	margin: 0;
 }
 
 .languageToggle:hover {
-	background: var(--text);
-	color: var(--secondary-text);
+	background-color: var(--headerHover);
 }

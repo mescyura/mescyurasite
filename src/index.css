@@ -4,14 +4,20 @@
 	--text: #1f1f1f;
 	--secondary-text: #ffffff;
 	--shadow: 0;
+	--header: transparent;
+	--headerBc: rgba(30, 41, 59, 0.5);
+	--headerHover: rgba(0, 0, 0, 0.1);
 }
 
 :root[data-theme='dark'] {
 	--primary: #1a1a1a;
-	--secondary: #333131;
+	--secondary: #0b0909;
 	--text: #ffffff;
 	--secondary-text: #1f1f1f;
 	--shadow: 255;
+	--header: rgba(8, 8, 9, 0.6);
+	--headerBc: rgba(91, 97, 107, 0.5);
+	--headerHover: rgba(200, 200, 220, 0.1);
 }
 
 * {
@@ -36,18 +42,7 @@ body {
 	transition: all 0.3s ease;
 }
 
-.hero {
-	min-height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: relative;
-	overflow: hidden;
-	/* padding: 2rem 0; */
-	padding: 4.5rem 2rem 2rem;
-}
-
-.hero::before {
+body::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -60,9 +55,24 @@ body {
 	transition: all 0.3s ease;
 }
 
+#root {
+	margin: 0 auto;
+}
+
+.hero {
+	min-height: 100vh;
+	width: 45rem;
+	padding-inline: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	overflow: hidden;
+	/* padding: 2rem 0; */
+	padding: 4.5rem 2rem 2rem;
+}
+
 .content {
-	max-width: 1200px;
-	/* padding: 4.5rem 2rem 2rem; */
 	color: var(--text);
 	text-align: center;
 }

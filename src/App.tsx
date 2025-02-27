@@ -4,13 +4,11 @@ import { Translations } from './interfaces';
 
 import { Header } from './components/header/Header';
 import { Home } from './pages/Home';
-import { About } from './pages/About';
-import { Services } from './pages/Services';
-import { Reviews } from './pages/Reviews';
 import { Portfolio } from './pages/Portfolio';
 import { NotFound } from './pages/NotFound';
 
 import data from './data/data.json';
+import { Contact } from './pages/Contact';
 
 function App() {
 	const translations: Translations = data.translations;
@@ -64,11 +62,9 @@ function App() {
 						path='/'
 						element={<Home translations={translations} language={language} />}
 					></Route>
-					<Route path='/about' element={<About />} />
-					<Route path='/services' element={<Services />} />
-					<Route path='/reviews' element={<Reviews />} />
 					<Route path='/portfolio' element={<Portfolio />} />
-					<Route path='/not-found' element={<NotFound />} />
+					<Route path='/contact' element={<Contact />} />
+					<Route path='/*' element={<NotFound />} />
 				</Routes>
 			</BrowserRouter>
 		</>

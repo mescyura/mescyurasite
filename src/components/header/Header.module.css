@@ -1,44 +1,100 @@
 .header {
+	margin-top: 1rem;
+	background-color: var(--header);
 	backdrop-filter: blur(16px);
-	width: 100%;
-	padding: 1rem 1.5rem;
+	width: 50rem;
+	padding: 0.5rem;
 	position: fixed;
 	z-index: 99;
 	display: flex;
-	justify-content: start;
-	gap: 12px;
+	gap: 0.5rem;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
 	align-items: center;
+	border: 1px solid var(--headerBc);
+	border-radius: 0.375rem;
+}
+
+@media screen and (max-width: 768px) {
+	.header {
+		width: 90%;
+	}
 }
 
 .nav {
 	color: var(--text);
 	display: flex;
-	gap: 12px;
+	gap: 0.5rem;
+	margin: 0;
 	margin-right: auto;
 }
 
 .nav a {
+	font-size: 14px;
+	line-height: 20px;
 	position: relative;
 	color: var(--text);
-
+	padding: 0.5rem 0.75rem;
+	border-radius: 0.375rem;
 	transition: 0.3s all ease-in-out;
 }
 
-.nav a:before {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	height: 1.5px;
-	width: 100%;
-	background: var(--text);
-	border-radius: 50px;
-	transform: scalex(0);
-	transition: transform 0.2s linear;
+.nav a:hover {
+	background-color: var(--headerHover);
 }
 
-.nav a:hover {
-	color: var(--color-blue);
+.nav a.active {
+	background-color: var(--headerHover);
 }
-.nav a:hover:before {
-	transform: scale(1);
+
+.social {
+	display: flex;
+	gap: 0.5rem;
+	margin: 0;
+}
+
+.social_btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	user-select: none;
+	padding: 0.5rem;
+	border-radius: 0.375rem;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	margin: 0;
+	transition: all 0.3s ease;
+}
+
+.social_btn:hover {
+	background-color: var(--headerHover);
+}
+
+.social_btn[href="https://github.com/mescyura"]:hover .social_icon,
+.social_btn[href="https://linkedin.com/in/yura-holyda"]:hover .social_icon
+{
+	fill: var(--text);
+}
+
+.social_btn[href='mailto:mescyura@gmail.com']:hover .social_icon {
+	stroke: var(--text);
+}
+
+.social_btn[href="https://github.com/mescyura"] .social_icon,
+.social_btn[href="https://linkedin.com/in/yura-holyda"] .social_icon
+{
+	width: 20px;
+	height: 20px;
+	fill: #9ca3af;
+	transition: all 0.3s ease;
+}
+
+.social_btn[href='mailto:mescyura@gmail.com'] .social_icon {
+	width: 20px;
+	height: 20px;
+	stroke: #9ca3af;
+	transition: all 0.3s ease;
 }

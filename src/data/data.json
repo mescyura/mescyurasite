@@ -16,7 +16,12 @@
 			"error": "Error sending message",
 			"tryAgain": "Please try again later.",
 			"allGood": "We will contact you soon",
-			"ok": "OK"
+			"ok": "OK",
+			"header": {
+				"home": "Home",
+				"portfolio": "Portfolio",
+				"contact": "Contact"
+			}
 		},
 		"ua": {
 			"title": "Фронтенд Розробник",
@@ -34,7 +39,12 @@
 			"error": "Помилка надсилання",
 			"tryAgain": "Будь ласка, спробуйте пізніше.",
 			"allGood": "З вами звяжуться незабаром",
-			"ok": "ОК"
+			"ok": "ОК",
+			"header": {
+				"home": "Головна",
+				"portfolio": "Портфоліо",
+				"contact": "Контакти"
+			}
 		}
 	},
 	"skills": [

@@ -16,6 +16,11 @@ export interface Translations {
 		tryAgain: string;
 		allGood: string;
 		ok: string;
+		header: {
+			home: string;
+			portfolio: string;
+			contact: string;
+		};
 	};
 }
 
