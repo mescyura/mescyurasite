@@ -1,0 +1,11 @@
+.tech_icon_wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 8px;
+}
+
+.tech_icon {
+	width: 24px;
+	height: 24px;
+}

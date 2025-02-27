@@ -1,7 +1,5 @@
+import classes from './Portfolio.module.css';
+
 export const Portfolio = () => {
-	return (
-		<div className='hero'>
-			<div>Portfolio</div>
-		</div>
-	);
+	return <section className={classes.hero}>Portfolio</section>;
 };

@@ -7,6 +7,7 @@ import { Link, useLocation } from 'react-router-dom';
 import classes from './Header.module.css';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
 import { FiMail } from 'react-icons/fi';
+import { useEffect } from 'react';
 
 interface LinkProps {
 	href: string;
@@ -43,6 +44,14 @@ export const Header = ({
 }: Props) => {
 	const location = useLocation();
 	console.log(location.pathname);
+
+	useEffect(() => {
+		if (typeof window === 'undefined') {
+			return;
+		}
+
+		void new Audio('/pop.mp3').play().catch(() => null);
+	}, [location.pathname]);
 
 	return (
 		<header className={classes.header}>

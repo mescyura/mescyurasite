@@ -1,7 +1,5 @@
+import classes from './NotFound.module.css';
+
 export const NotFound = () => {
-	return (
-		<div className='hero'>
-			<div>NotFound</div>
-		</div>
-	);
+	return <section className={classes.hero}>NotFound</section>;
 };

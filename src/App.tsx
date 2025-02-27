@@ -14,16 +14,16 @@ function App() {
 	const translations: Translations = data.translations;
 
 	const [isDark, setIsDark] = useState<boolean>(() => {
-		const savedTheme = localStorage.getItem('theme');
+		const savedTheme = localStorage.getItem('mescyurasite-theme');
 		return savedTheme === 'dark';
 	});
 
 	const [language, setLanguage] = useState<string>(() => {
-		return localStorage.getItem('language') || 'ua';
+		return localStorage.getItem('mescyurasite-language') || 'en';
 	});
 
 	useEffect(() => {
-		localStorage.setItem('theme', isDark ? 'dark' : 'light');
+		localStorage.setItem('mescyurasite-theme', isDark ? 'dark' : 'light');
 		document.documentElement.setAttribute(
 			'data-theme',
 			isDark ? 'dark' : 'light'
@@ -31,7 +31,7 @@ function App() {
 	}, [isDark]);
 
 	useEffect(() => {
-		localStorage.setItem('language', language);
+		localStorage.setItem('mescyurasite-language', language);
 	}, [language]);
 
 	const toggleTheme = () => {
@@ -47,7 +47,7 @@ function App() {
 	};
 
 	return (
-		<>
+		<div className='main-content'>
 			<BrowserRouter>
 				<Header
 					toggleTheme={toggleTheme}
@@ -67,7 +67,7 @@ function App() {
 					<Route path='/*' element={<NotFound />} />
 				</Routes>
 			</BrowserRouter>
-		</>
+		</div>
 	);
 }
 

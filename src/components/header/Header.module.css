@@ -8,6 +8,7 @@
 	z-index: 99;
 	display: flex;
 	gap: 0.5rem;
+	top: 0;
 	left: 50%;
 	transform: translateX(-50%);
 	display: flex;

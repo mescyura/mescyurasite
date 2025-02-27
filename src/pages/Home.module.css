@@ -1,0 +1,58 @@
+.hero {
+	width: 100%;
+	position: relative;
+	padding-inline: 40px;
+	margin-top: 126px;
+	color: var(--text);
+	animation: slideDown 0.5s ease-out;
+}
+
+.profile {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: start;
+	gap: 0.5rem;
+	margin-bottom: 16px;
+}
+
+.profile_image {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border: 1px solid var(--headerBc);
+	object-fit: cover;
+}
+
+h1 {
+	font-size: 32px;
+	line-height: 1;
+}
+
+.subtitle {
+	font-size: 16px;
+
+	margin-bottom: 32px;
+}
+
+@keyframes slideDown {
+	from {
+		transform: translateY(-50px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.tech_list {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 0.5rem;
+	border: 1px solid var(--headerBc);
+	border-radius: 0.375rem;
+	margin-bottom: 32px;
+}

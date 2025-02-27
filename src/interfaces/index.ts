@@ -1,7 +1,13 @@
 export interface Translations {
 	[key: string]: {
-		title: string;
-		subtitle: string;
+		profile: string;
+		profile_info: string;
+		title2: string;
+		subtitle2: string;
+		technologies: string;
+		technologies_info: string;
+		projects: string;
+		projects_info: string;
 		viewWork: string;
 		contact: string;
 		darkMode: string;

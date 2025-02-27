@@ -1,7 +1,5 @@
+import classes from './Contact.module.css';
+
 export const Contact = () => {
-	return (
-		<div className='hero'>
-			<div>Contact</div>
-		</div>
-	);
+	return <section className={classes.hero}>Contact</section>;
 };

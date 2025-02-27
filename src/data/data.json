@@ -1,8 +1,14 @@
 {
 	"translations": {
 		"en": {
-			"title": "Frontend Developer",
-			"subtitle": "Crafting beautiful & Interactive web experiences",
+			"profile": "Hey, I'm Yurii",
+			"profile_info": "I'm a self-taught web developer. My passion for web development allows me to create dynamic and modern websites that not only impress with their design, but also guarantee a flawless user experience.",
+			"title2": "What I Do",
+			"subtitle2": "I'm passionate about everything in technology; from designing and developing software, to understanding how the many moving parts of the internet work together, to cybersecurity, programming, and so much more. I strive to learn more about these things every day, and utilize my knowledge to further understand how or why the technology around us works.",
+			"technologies": "Technologies",
+			"technologies_info": "I use a variety of tools to streamline my development process and increase the quality of both my code, and my projects. Below is a list of technologies and languages I've had experience with in the past, or use currently.",
+			"projects": "Projects",
+			"projects_info": "In my free time, I enjoy creating open source projects on GitHub, so I can learn from others and share what I know.",
 			"viewWork": "View My Work",
 			"contact": "Contact Me",
 			"darkMode": "Dark mode",
@@ -24,8 +30,14 @@
 			}
 		},
 		"ua": {
-			"title": "Фронтенд Розробник",
-			"subtitle": "Створюю красиві та Інтерактивні веб-рішення",
+			"profile": "Привіт, я Юрій",
+			"profile_info": "Я веб-розробник. Моя пристрасть до веб-розробки дозволяє мені створювати динамічні та сучасні веб-сайти, які не тільки вражають своїм дизайном, але й гарантують бездоганний користувацький досвід.",
+			"title2": "Мої захоплення",
+			"subtitle2": "Я захоплююся всім, що стосується технологій: від проектування та розробки програмного забезпечення до розуміння того, як багато рухомих частин інтернету працюють разом, до кібербезпеки, програмування та багато чого іншого. Я прагну дізнаватися більше про ці речі щодня і використовувати свої знання, щоб краще зрозуміти, як і чому працюють технології навколо нас.",
+			"technologies": "Технології",
+			"technologies_info": "Я використовую різноманітні інструменти для оптимізації процесу розробки та підвищення якості як мого коду, так і моїх проектів. Нижче наведено список технологій та мов, з якими я мав досвід роботи в минулому або використовую зараз.",
+			"projects": "Проекти",
+			"projects_info": "У вільний час я люблю створювати проекти з відкритим вихідним кодом на GitHub, щоб вчитися у інших і ділитися своїми знаннями.",
 			"viewWork": "Мої роботи",
 			"contact": "Зв'язатися",
 			"darkMode": "Темна тема",

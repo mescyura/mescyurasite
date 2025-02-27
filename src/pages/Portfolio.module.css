@@ -1,0 +1,7 @@
+.hero {
+	width: 100%;
+	position: relative;
+	padding-inline: 40px;
+	margin-top: 126px;
+	color: var(--text);
+}
