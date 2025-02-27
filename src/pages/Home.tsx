@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Translations } from '../interfaces';
 
-import img from '../assets/img.jpg';
+import img from '../assets/img.webp';
 import { ContactModal } from '../components/modal/ContactModal';
 import { Spotify } from '../components/spotify/Spotify';
 import classes from './Home.module.css';
