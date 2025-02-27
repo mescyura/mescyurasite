@@ -10,6 +10,9 @@ import { NotFound } from './pages/NotFound';
 import data from './data/data.json';
 import { Contact } from './pages/Contact';
 
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
+
 function App() {
 	const translations: Translations = data.translations;
 
@@ -67,6 +70,8 @@ function App() {
 					<Route path='/*' element={<NotFound />} />
 				</Routes>
 			</BrowserRouter>
+			<Analytics />
+			<SpeedInsights />
 		</div>
 	);
 }
