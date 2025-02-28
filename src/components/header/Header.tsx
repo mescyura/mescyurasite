@@ -43,7 +43,6 @@ export const Header = ({
 	language,
 }: Props) => {
 	const location = useLocation();
-	console.log(location.pathname);
 
 	useEffect(() => {
 		if (typeof window === 'undefined') {

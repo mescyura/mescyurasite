@@ -1,0 +1,57 @@
+.project {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	padding: 1rem;
+	border: 1px solid var(--headerBc);
+	border-radius: 0.375rem;
+	height: 9rem;
+	color: var(--text);
+	transition: 0.3s all ease;
+}
+
+.project:hover {
+	border: 1px solid var(--text);
+}
+
+.project h1 {
+	font-size: 16px;
+	font-weight: 600;
+	margin-bottom: 6px;
+}
+
+.project p {
+	font-size: 14px;
+	font-weight: 400;
+	color: var(--headerBc);
+}
+
+.language_data {
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	gap: 0.5rem;
+	margin-top: auto;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+}
+
+.language {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+.language_color {
+	width: 0.75rem;
+	height: 0.75rem;
+	border-radius: 50%;
+}
+
+.stats {
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	gap: 0.5rem;
+}

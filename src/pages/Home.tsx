@@ -1,9 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Translations } from '../interfaces';
 
 import img from '../assets/img.webp';
 import { ContactModal } from '../components/modal/ContactModal';
-import { Spotify } from '../components/spotify/Spotify';
 import classes from './Home.module.css';
 import { TechItem } from '../components/techItem/TechItem';
 import {
@@ -22,6 +21,29 @@ import {
 } from 'react-icons/si';
 import { FiFigma } from 'react-icons/fi';
 import { VscVscode } from 'react-icons/vsc';
+import RepoItem from '../components/repoItem/RepoItem';
+
+async function getStaticProps() {
+	const repos = await fetch(
+		`https://api.github.com/users/mescyura/repos?type=owner&per_page=100`
+	).then(res => res.json());
+
+	const selectedRepoNames = [
+		'task-manager-app',
+		'react-calculator',
+		'mescyurasite',
+		'rock-paper-scissors',
+	];
+
+	const topRepos = repos.filter((repo: { name: string }) =>
+		selectedRepoNames.includes(repo.name)
+	);
+
+	return {
+		props: { topRepos },
+		revalidate: 3600,
+	};
+}
 
 interface Props {
 	translations: Translations;
@@ -30,6 +52,12 @@ interface Props {
 
 export const Home = ({ translations, language }: Props) => {
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+	const [topRepos, setTopRepos] = useState([]);
+
+	useEffect(() => {
+		getStaticProps().then(data => setTopRepos(data.props.topRepos));
+	}, []);
 
 	return (
 		<>
@@ -73,8 +101,23 @@ export const Home = ({ translations, language }: Props) => {
 				<p className={classes.subtitle}>
 					{translations[language].projects_info}
 				</p>
-
-				<Spotify />
+				<div className={classes.projects_list}>
+					{topRepos.length !== 0
+						? // eslint-disable-next-line @typescript-eslint/no-explicit-any
+						  topRepos.map((repo: Record<string, any>) => {
+								return (
+									<RepoItem
+										key={repo.name}
+										name={repo.name}
+										description={repo.description}
+										stars={repo.stargazers_count}
+										forks={repo.forks_count}
+										language={repo.language}
+									/>
+								);
+						  })
+						: 'Loading...'}
+				</div>
 			</section>
 			<ContactModal
 				isOpen={isModalOpen}

@@ -14,13 +14,11 @@ interface SpotifyData {
 export const Spotify = () => {
 	const [spotify, setSpotify] = useState<SpotifyData | null>(null);
 
-	console.log(spotify);
-
 	useEffect(() => {
 		const ws = new WebSocket('wss://api.lanyard.rest/socket');
 
 		ws.onopen = () => {
-			console.log('✅ WebSocket connected');
+			// console.log('✅ WebSocket connected');
 			ws.send(JSON.stringify({ op: 2, d: { subscribe_to_id: DISCORD_ID } }));
 		};
 
@@ -31,7 +29,7 @@ export const Spotify = () => {
 			}
 		};
 
-		ws.onclose = () => console.log('🔴 WebSocket disconnected');
+		// ws.onclose = () => console.log('🔴 WebSocket disconnected');
 
 		return () => ws.close(); // Закриваємо WebSocket при виході
 	}, []);
@@ -41,26 +39,28 @@ export const Spotify = () => {
 	if (spotify)
 		return (
 			<div className={classes.spotify}>
-				<h2>Now listening to:</h2>
-				<img src={spotify.album_art_url ?? ''} alt={spotify.album} />
+				<h2>Currently listening on Spotify :</h2>
+				<a
+					href={`https://open.spotify.com/track/${spotify.track_id}`}
+					target='_blank'
+					rel='noreferrer'
+				>
+					<div className={classes.song_wrapper}>
+						<img src={spotify.album_art_url ?? ''} alt={spotify.album} />
 
-				<div className={classes.playing}>
-					<div className={classes.rect1}></div>
-					<div className={classes.rect2}></div>
-					<div className={classes.rect3}></div>
-					<div className={classes.rect4}></div>
-					<div className={classes.rect5}></div>
-				</div>
-				<div className={classes.info}>
-					<a
-						href={`https://open.spotify.com/track/${spotify.track_id}`}
-						target='_blank'
-						rel='noreferrer'
-					>
-						{spotify.song}
-					</a>
-					<p>{spotify.artist}</p>
-				</div>
+						<div className={classes.playing}>
+							<div className={classes.rect1}></div>
+							<div className={classes.rect2}></div>
+							<div className={classes.rect3}></div>
+							<div className={classes.rect4}></div>
+							<div className={classes.rect5}></div>
+						</div>
+						<div className={classes.info}>
+							<p className={classes.song}>{spotify.song}</p>
+							<p className={classes.artist}>{spotify.artist}</p>
+						</div>
+					</div>
+				</a>
 			</div>
 		);
 };

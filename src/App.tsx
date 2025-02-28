@@ -12,6 +12,7 @@ import { Contact } from './pages/Contact';
 
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
+import Footer from './components/footer/Footer';
 
 function App() {
 	const translations: Translations = data.translations;
@@ -69,6 +70,7 @@ function App() {
 					<Route path='/contact' element={<Contact />} />
 					<Route path='/*' element={<NotFound />} />
 				</Routes>
+				<Footer />
 			</BrowserRouter>
 			<Analytics />
 			<SpeedInsights />

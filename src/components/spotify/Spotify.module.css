@@ -1,10 +1,21 @@
 .spotify {
-	margin-block: 20px;
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+	align-items: start;
 	justify-content: center;
-	gap: 15px;
-	height: 40px;
+	gap: 6px;
+	animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: scale(0.9);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
 }
 
 .spotify h2 {
@@ -12,28 +23,23 @@
 	font-weight: 400;
 }
 
+.spotify a {
+	display: flex;
+}
+
+.spotify .song_wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	max-width: 220px;
+}
+
 .spotify img {
-	width: 40px;
-	height: 40px;
+	width: 30px;
+	height: 30px;
 
 	object-fit: contain;
-}
-
-.spotify .info {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	justify-content: start;
-	font-size: 14px;
-}
-
-.spotify div a {
-	color: var(--text);
-}
-
-.spotify div p {
-	font-size: 12px;
-	color: #b3b3b3;
 }
 
 .playing {
@@ -101,4 +107,33 @@
 		-webkit-transform: scaleY(1);
 		transform: scaleY(1);
 	}
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: start;
+	font-size: 14px;
+	overflow: hidden;
+}
+
+.info .song {
+	font-size: 12px;
+	color: var(--text);
+
+	white-space: nowrap; /* Забороняє перенос тексту */
+	overflow: hidden; /* Ховає все, що виходить за межі */
+	text-overflow: ellipsis; /* Додає три крапки */
+	max-width: 100%;
+}
+
+.info .artist {
+	font-size: 10px;
+	color: #b3b3b3;
+
+	white-space: nowrap; /* Забороняє перенос тексту */
+	overflow: hidden; /* Ховає все, що виходить за межі */
+	text-overflow: ellipsis; /* Додає три крапки */
+	max-width: 100%;
 }
