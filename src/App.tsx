@@ -19,11 +19,18 @@ function App() {
 
 	const [isDark, setIsDark] = useState<boolean>(() => {
 		const savedTheme = localStorage.getItem('mescyurasite-theme');
-		return savedTheme === 'dark';
+		if (savedTheme) {
+			return savedTheme === 'dark';
+		}
+
+		const systemTheme = window.matchMedia(
+			'(prefers-color-scheme: dark)'
+		).matches;
+		return systemTheme;
 	});
 
 	const [language, setLanguage] = useState<string>(() => {
-		return localStorage.getItem('mescyurasite-language') || 'en';
+		return localStorage.getItem('mescyurasite-language') || 'ua';
 	});
 
 	useEffect(() => {
