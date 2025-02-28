@@ -11,7 +11,6 @@ import data from './data/data.json';
 import { Contact } from './pages/Contact';
 
 import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/react';
 import Footer from './components/footer/Footer';
 
 function App() {
@@ -80,7 +79,6 @@ function App() {
 				<Footer />
 			</BrowserRouter>
 			<Analytics />
-			<SpeedInsights />
 		</div>
 	);
 }
