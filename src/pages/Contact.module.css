@@ -37,3 +37,37 @@ h1 {
 	font-size: 16px;
 	margin-bottom: 20px;
 }
+
+.msg_links_list {
+	display: flex;
+	flex-direction: row;
+	align-items: start;
+	gap: 1rem;
+}
+
+@media screen and (max-width: 700px) {
+	.msg_links_list {
+		flex-direction: column-reverse;
+	}
+}
+
+.links_list {
+	flex-shrink: 0;
+	/* width: 40%; */
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+@media screen and (max-width: 700px) {
+	.links_list {
+		width: 100%;
+	}
+}
+
+.link_icon {
+	width: 1.5rem;
+	height: 1.5rem;
+	color: var(--secondary-text);
+}

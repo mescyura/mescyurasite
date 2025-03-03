@@ -16,6 +16,13 @@ export interface Translations {
 		chat: string;
 		chat_info: string;
 		time: string[];
+		contact_me: {
+			thanks: string;
+			email: string;
+			message: string;
+			message_placehorder: string;
+			send: string;
+		};
 	};
 }
 

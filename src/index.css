@@ -6,6 +6,7 @@
 	--header: rgba(255, 255, 255, 0.6);
 	--border: rgba(30, 41, 59, 0.5);
 	--hover: rgba(0, 0, 0, 0.1);
+	--inputBg: rgba(225, 225, 225, 0.5);
 }
 
 :root[data-theme='dark'] {
@@ -16,6 +17,7 @@
 	--header: rgba(8, 8, 9, 0.6);
 	--border: rgba(91, 97, 107, 0.5);
 	--hover: rgba(200, 200, 220, 0.1);
+	--inputBg: rgba(51, 55, 61, 0.5);
 }
 
 * {

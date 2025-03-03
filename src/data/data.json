@@ -22,7 +22,14 @@
 				"awake",
 				"sleeping",
 				". I'll get back to you soon."
-			]
+			],
+			"contact_me": {
+				"thanks": "Thanks for reaching out! I'll get back to you soon.",
+				"email": "EMAIL",
+				"message": "MESSAGE",
+				"message_placehorder": "Hi Yurii, what's up?",
+				"send": "Send"
+			}
 		},
 		"ua": {
 			"header": {
@@ -46,7 +53,14 @@
 				"не сплю",
 				"сплю",
 				". Відповім, як тільки зможу."
-			]
+			],
+			"contact_me": {
+				"thanks": "Дякую, що звернулися! Я скоро з вами зв'яжуся.",
+				"email": "ПОШТА",
+				"message": "ПОВІДОМЛЕНЯ",
+				"message_placehorder": "Привіт Юрій, як справи?",
+				"send": "Відправити"
+			}
 		}
 	},
 	"skills": [
