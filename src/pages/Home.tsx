@@ -1,10 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Translations } from '../interfaces';
-
-import img from '../assets/img.webp';
-import { ContactModal } from '../components/modal/ContactModal';
-import classes from './Home.module.css';
-import { TechItem } from '../components/techItem/TechItem';
+import { FiFigma } from 'react-icons/fi';
+import { VscVscode } from 'react-icons/vsc';
 import {
 	SiCss3,
 	SiGit,
@@ -19,9 +15,13 @@ import {
 	SiTailwindcss,
 	SiTypescript,
 } from 'react-icons/si';
-import { FiFigma } from 'react-icons/fi';
-import { VscVscode } from 'react-icons/vsc';
+
+import { TechItem } from '../components/techItem/TechItem';
 import RepoItem from '../components/repoItem/RepoItem';
+import { Translations } from '../interfaces';
+
+import img from '../assets/img.webp';
+import classes from './Home.module.css';
 
 async function getStaticProps() {
 	const repos = await fetch(
@@ -51,8 +51,6 @@ interface Props {
 }
 
 export const Home = ({ translations, language }: Props) => {
-	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-
 	const [topRepos, setTopRepos] = useState([]);
 
 	useEffect(() => {
@@ -70,9 +68,9 @@ export const Home = ({ translations, language }: Props) => {
 					{translations[language].profile_info}
 				</p>
 				<div className={classes.profile}>
-					<h1>{translations[language].title2} 💭</h1>
+					<h1>{translations[language].hobby} 💭</h1>
 				</div>
-				<p className={classes.subtitle}>{translations[language].subtitle2}</p>
+				<p className={classes.subtitle}>{translations[language].hobby_info}</p>
 				<div className={classes.profile}>
 					<h1>{translations[language].technologies} 💻</h1>
 				</div>
@@ -119,12 +117,6 @@ export const Home = ({ translations, language }: Props) => {
 						: 'Loading...'}
 				</div>
 			</section>
-			<ContactModal
-				isOpen={isModalOpen}
-				onClose={() => setIsModalOpen(false)}
-				translations={translations}
-				language={language}
-			/>
 		</>
 	);
 };

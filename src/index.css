@@ -2,22 +2,20 @@
 	--primary: #ffffff;
 	--secondary: #e4e4e4;
 	--text: #1f1f1f;
-	--secondary-text: #ffffff;
-	--shadow: 0;
-	--header: transparent;
-	--headerBc: rgba(30, 41, 59, 0.5);
-	--headerHover: rgba(0, 0, 0, 0.1);
+	--secondary-text: rgba(0, 0, 0, 0.6);
+	--header: rgba(255, 255, 255, 0.6);
+	--border: rgba(30, 41, 59, 0.5);
+	--hover: rgba(0, 0, 0, 0.1);
 }
 
 :root[data-theme='dark'] {
 	--primary: #1a1a1a;
 	--secondary: #0b0909;
 	--text: #ffffff;
-	--secondary-text: #1f1f1f;
-	--shadow: 255;
+	--secondary-text: rgba(255, 255, 255, 0.6);
 	--header: rgba(8, 8, 9, 0.6);
-	--headerBc: rgba(91, 97, 107, 0.5);
-	--headerHover: rgba(200, 200, 220, 0.1);
+	--border: rgba(91, 97, 107, 0.5);
+	--hover: rgba(200, 200, 220, 0.1);
 }
 
 * {
@@ -36,7 +34,7 @@ a {
 
 body {
 	overscroll-behavior: none;
-	background: var(--secondary-text);
+	background: var(--primary);
 	color: var(--text);
 	line-height: 1.6;
 	transition: all 0.3s ease;

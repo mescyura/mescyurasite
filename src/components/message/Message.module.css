@@ -1,0 +1,78 @@
+.message_wrapper {
+	grid-row: span 3 / span 3;
+	height: auto;
+	min-height: 21.5rem;
+	border-radius: 0.375rem;
+	border: 1px solid var(--headerBc);
+	background-color: transparent;
+	padding: 1rem;
+}
+
+.message_label {
+	margin-bottom: 0.25rem;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	font-weight: 700;
+}
+
+.message_input,
+.message_textarea {
+	margin-bottom: 1rem;
+	border-radius: 0.375rem;
+	background-color: var(--headerHover);
+	border: 1px solid var(--headerBc);
+	padding: 0.5rem;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	color: var(--text);
+	min-width: 100%;
+	max-width: 100%;
+}
+
+.message_textarea {
+	height: 200px;
+}
+
+.message_btn_wrapper {
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+.message_text {
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	color: rgb(17, 24, 39);
+}
+.message_btn {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	border-radius: 9999px;
+	border-width: 1px;
+	border-color: rgb(31, 41, 55);
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	font-weight: 500;
+	transition-property: color, background-color, border-color,
+		text-decoration-color, fill, stroke;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 75ms;
+	background-color: rgb(229, 231, 235);
+}
+.message_btn_icon_send {
+	margin-left: 0.5rem;
+}
+
+.message_btn_icon_spinner {
+	margin-left: 0.5rem;
+	height: 1rem;
+	width: 1rem;
+	animation: spin 1s linear infinite;
+}

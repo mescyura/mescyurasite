@@ -130,7 +130,7 @@
 
 .info .artist {
 	font-size: 10px;
-	color: #b3b3b3;
+	color: var(--secondary-text);
 
 	white-space: nowrap; /* Забороняє перенос тексту */
 	overflow: hidden; /* Ховає все, що виходить за межі */

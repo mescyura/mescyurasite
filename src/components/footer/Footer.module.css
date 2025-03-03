@@ -3,7 +3,7 @@
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: end;
-	border-top: 1px solid var(--headerBc);
+	border-top: 1px solid var(--border);
 	padding: 2rem 0;
 	padding-inline: 40px;
 	margin-bottom: 2rem;
@@ -36,5 +36,5 @@
 	font-weight: 500;
 	font-size: 1rem;
 	line-height: 1.5rem;
-	color: var(--headerBc);
+	color: var(--secondary-text);
 }

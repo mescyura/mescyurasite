@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
+
 import { Translations } from './interfaces';
 
 import { Header } from './components/header/Header';
 import { Home } from './pages/Home';
 import { Portfolio } from './pages/Portfolio';
+import { Contact } from './pages/Contact';
 import { NotFound } from './pages/NotFound';
+import Footer from './components/footer/Footer';
 
 import data from './data/data.json';
-import { Contact } from './pages/Contact';
-
-import { Analytics } from '@vercel/analytics/react';
-import Footer from './components/footer/Footer';
 
 function App() {
 	const translations: Translations = data.translations;
@@ -73,7 +73,12 @@ function App() {
 						element={<Home translations={translations} language={language} />}
 					></Route>
 					<Route path='/portfolio' element={<Portfolio />} />
-					<Route path='/contact' element={<Contact />} />
+					<Route
+						path='/contact'
+						element={
+							<Contact translations={translations} language={language} />
+						}
+					/>
 					<Route path='/*' element={<NotFound />} />
 				</Routes>
 				<Footer />
