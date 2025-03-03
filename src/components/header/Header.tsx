@@ -7,7 +7,7 @@ import { Link, useLocation } from 'react-router-dom';
 import classes from './Header.module.css';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
 import { FiMail } from 'react-icons/fi';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { HiMenu, HiX } from 'react-icons/hi';
 import { AnimatePresence, motion } from 'framer-motion';
 import classNames from 'classnames';
@@ -76,13 +76,13 @@ export const Header = ({
 
 	const location = useLocation();
 
-	useEffect(() => {
-		if (typeof window === 'undefined') {
-			return;
-		}
+	// useEffect(() => {
+	// 	if (typeof window === 'undefined') {
+	// 		return;
+	// 	}
 
-		void new Audio('/pop.mp3').play().catch(() => null);
-	}, [location.pathname]);
+	// 	void new Audio('/pop.mp3').play().catch(() => null);
+	// }, [location.pathname]);
 
 	return (
 		<>
