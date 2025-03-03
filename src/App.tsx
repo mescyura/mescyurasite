@@ -12,6 +12,7 @@ import { NotFound } from './pages/NotFound';
 import Footer from './components/footer/Footer';
 
 import data from './data/data.json';
+import LetterGlitch from './ui/LetterGlitch/LetterGlitch';
 
 function App() {
 	const translations: Translations = data.translations;
@@ -81,6 +82,12 @@ function App() {
 					/>
 					<Route path='/*' element={<NotFound />} />
 				</Routes>
+				<LetterGlitch
+					glitchSpeed={50}
+					centerVignette={false}
+					outerVignette={true}
+					smooth={true}
+				/>
 				<Footer />
 			</BrowserRouter>
 			<Analytics />

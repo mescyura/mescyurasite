@@ -3,7 +3,7 @@
 	position: relative;
 	padding-inline: 40px;
 	margin-top: 126px;
-	margin-bottom: 5rem;
+	margin-bottom: 2rem;
 	color: var(--text);
 	animation: slideDown 0.5s ease-out;
 }
