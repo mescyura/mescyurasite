@@ -25,8 +25,7 @@ const Message = ({ translations, language }: Props) => {
 		/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 	);
 
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	const sendMessage = (e: React.MouseEvent<HTMLButtonElement>) => {
+	const sendMessage = () => {
 		if (email.trim() == '' || message.trim() == '')
 			return setErrMsg('Please fill out all fields!');
 		if (!emailRegex.test(email))
