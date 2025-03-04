@@ -16,6 +16,10 @@ export interface Translations {
 		chat: string;
 		chat_info: string;
 		time: string[];
+		portfolio: {
+			title: string;
+			subtitle: string;
+		};
 		contact_me: {
 			thanks: string;
 			email: string;

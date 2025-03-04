@@ -23,6 +23,10 @@
 				"sleeping",
 				". I'll get back to you soon."
 			],
+			"portfolio": {
+				"title": "Portfolio",
+				"subtitle": "Projects made by me or in which I participated."
+			},
 			"contact_me": {
 				"thanks": "Thanks for reaching out! I'll get back to you soon.",
 				"email": "EMAIL",
@@ -54,6 +58,10 @@
 				"сплю",
 				". Відповім, як тільки зможу."
 			],
+			"portfolio": {
+				"title": "Портфоліо",
+				"subtitle": "Проекти зроблені мною або в яких я брав участь."
+			},
 			"contact_me": {
 				"thanks": "Дякую, що звернулися! Я скоро з вами зв'яжуся.",
 				"email": "ПОШТА",

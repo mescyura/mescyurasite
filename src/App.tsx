@@ -73,7 +73,12 @@ function App() {
 						path='/'
 						element={<Home translations={translations} language={language} />}
 					></Route>
-					<Route path='/portfolio' element={<Portfolio />} />
+					<Route
+						path='/portfolio'
+						element={
+							<Portfolio translations={translations} language={language} />
+						}
+					/>
 					<Route
 						path='/contact'
 						element={
