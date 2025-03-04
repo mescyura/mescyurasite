@@ -9,3 +9,8 @@
 	width: 24px;
 	height: 24px;
 }
+
+.tippy {
+	color: var(--primary) !important;
+	background-color: var(--tippy) !important;
+}
