@@ -7,7 +7,7 @@ import { Link, useLocation } from 'react-router-dom';
 import classes from './Header.module.css';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
 import { FiMail } from 'react-icons/fi';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { HiMenu, HiX } from 'react-icons/hi';
 import { AnimatePresence, motion } from 'framer-motion';
 import classNames from 'classnames';
@@ -76,6 +76,10 @@ export const Header = ({
 	};
 
 	const location = useLocation();
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [location]);
 
 	// useEffect(() => {
 	// 	if (typeof window === 'undefined') {
