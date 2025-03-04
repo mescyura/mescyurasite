@@ -17,7 +17,7 @@ interface PortfolioProps {
 }
 
 export const PortfolioItem = ({
-	// name,
+	name,
 	href,
 	mobile,
 	desktop,
@@ -36,6 +36,7 @@ export const PortfolioItem = ({
 
 	return (
 		<div className={classes.portfolio}>
+			<h1>{name}</h1>
 			<div className={classes.img_container}>
 				<img src={view ? mobile : desktop} alt='' />
 			</div>
@@ -51,7 +52,6 @@ export const PortfolioItem = ({
 					/>
 				</div>
 				<div className={classes.href}>
-					{/* <span>{name}</span> */}
 					<a
 						href={href}
 						target='_blank'
