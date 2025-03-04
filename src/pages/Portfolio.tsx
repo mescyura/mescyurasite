@@ -5,15 +5,18 @@ import dd from '../assets/deren-desktop.webp';
 import dm from '../assets/deren-mobile.webp';
 import md from '../assets/meyes-desktop.webp';
 import mm from '../assets/meyes-mobile.webp';
+import sbd from '../assets/shopbakery-desktop.webp';
+import sbm from '../assets/shopbakery-mobile.webp';
+import doed from '../assets/doe-desktop.webp';
 import { CiDesktop, CiMobile1 } from 'react-icons/ci';
 import { useState } from 'react';
 import { FiExternalLink } from 'react-icons/fi';
 
 interface PortfolioProps {
 	name: string;
-	href: string;
-	mobile: string;
-	desktop: string;
+	href?: string;
+	mobile?: string;
+	desktop?: string;
 	tools: string[];
 }
 
@@ -44,14 +47,18 @@ export const PortfolioItem = ({
 			</div>
 			<div className={classes.info}>
 				<div className={classes.view}>
-					<CiDesktop
-						onClick={() => setPicture('desktop')}
-						className={view ? classes.icon : classes.icon_active}
-					/>
-					<CiMobile1
-						onClick={() => setPicture('mobile')}
-						className={view ? classes.icon_active : classes.icon}
-					/>
+					{desktop && (
+						<CiDesktop
+							onClick={() => setPicture('desktop')}
+							className={view ? classes.icon : classes.icon_active}
+						/>
+					)}
+					{mobile && (
+						<CiMobile1
+							onClick={() => setPicture('mobile')}
+							className={view ? classes.icon_active : classes.icon}
+						/>
+					)}
 				</div>
 				<div className={classes.href}>
 					<a
@@ -60,7 +67,11 @@ export const PortfolioItem = ({
 						rel='noreferrer'
 						className={classes.href_a}
 					>
-						<FiExternalLink className={classes.href_icon} />
+						{href ? (
+							<FiExternalLink className={classes.href_icon} />
+						) : (
+							<FiExternalLink className={classes.href_icon_nolink} />
+						)}
 					</a>
 				</div>
 			</div>
@@ -103,6 +114,18 @@ export const Portfolio = ({ translations, language }: Props) => {
 					mobile={mm}
 					desktop={md}
 					tools={['HTML', 'CSS', 'Sass', 'JavaScript', 'Python']}
+				/>
+				<PortfolioItem
+					name='doe.app'
+					desktop={doed}
+					tools={['TypeScript', 'React', 'Redux', 'Less']}
+				/>
+				<PortfolioItem
+					name='shop-bakery.com'
+					href='https://mescyura.github.io/shop-bakery/'
+					mobile={sbm}
+					desktop={sbd}
+					tools={['HTML', 'CSS', 'Sass', 'JavaScript']}
 				/>
 			</div>
 		</section>
