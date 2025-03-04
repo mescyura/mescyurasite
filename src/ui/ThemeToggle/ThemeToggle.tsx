@@ -8,7 +8,11 @@ interface Props {
 
 export const ThemeToggle = ({ toggleTheme, isDark }: Props) => {
 	return (
-		<button className={classes.themeToggle} onClick={toggleTheme}>
+		<button
+			className={classes.themeToggle}
+			onClick={toggleTheme}
+			aria-label='theme button'
+		>
 			{/* {isDark
 				? translations[language].lightMode
 				: translations[language].darkMode} */}

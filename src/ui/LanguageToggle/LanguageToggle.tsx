@@ -7,7 +7,11 @@ interface Props {
 
 export const LanguageToggle = ({ toggleLanguage, language }: Props) => {
 	return (
-		<button className={classes.languageToggle} onClick={toggleLanguage}>
+		<button
+			className={classes.languageToggle}
+			onClick={toggleLanguage}
+			aria-label='language button'
+		>
 			{language.toUpperCase()}
 		</button>
 	);

@@ -47,6 +47,7 @@ const LinkButton = ({ icon, href }: LinkProps) => {
 			className={classes.social_btn}
 			target='_blank'
 			rel='noreferrer'
+			aria-label={href}
 			href={href}
 		>
 			{icon}
