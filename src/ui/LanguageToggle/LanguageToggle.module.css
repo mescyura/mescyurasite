@@ -15,5 +15,5 @@
 }
 
 .languageToggle:hover {
-	background-color: var(--headerHover);
+	background-color: var(--hover);
 }
