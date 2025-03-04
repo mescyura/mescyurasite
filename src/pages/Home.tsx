@@ -33,6 +33,8 @@ async function getStaticProps() {
 		'react-calculator',
 		'mescyurasite',
 		'rock-paper-scissors',
+		'tetris',
+		'shop-bakery',
 	];
 
 	const topRepos = repos.filter((repo: { name: string }) =>

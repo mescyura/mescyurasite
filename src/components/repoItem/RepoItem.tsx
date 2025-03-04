@@ -6,6 +6,7 @@ import classes from './RepoItem.module.css';
 const Languages = {
 	TypeScript: '#3178c6',
 	JavaScript: '#f1e05a',
+	HTML: '#d25735',
 };
 
 interface RepoProps {
