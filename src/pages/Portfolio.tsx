@@ -14,6 +14,7 @@ interface PortfolioProps {
 	href: string;
 	mobile: string;
 	desktop: string;
+	tools: string[];
 }
 
 export const PortfolioItem = ({
@@ -21,6 +22,7 @@ export const PortfolioItem = ({
 	href,
 	mobile,
 	desktop,
+	tools,
 }: PortfolioProps) => {
 	const [view, setView] = useState(false);
 
@@ -62,6 +64,13 @@ export const PortfolioItem = ({
 					</a>
 				</div>
 			</div>
+			<div className={classes.tools}>
+				{tools.map(tool => (
+					<div id={tool} className={classes.tool}>
+						{tool}
+					</div>
+				))}
+			</div>
 		</div>
 	);
 };
@@ -86,12 +95,14 @@ export const Portfolio = ({ translations, language }: Props) => {
 					href='https://creo.deren.com.ua/'
 					mobile={dm}
 					desktop={dd}
+					tools={['HTML', 'CSS', 'Sass', 'JavaScript']}
 				/>
 				<PortfolioItem
 					name='meyes.app'
 					href='https://meyes.app/'
 					mobile={mm}
 					desktop={md}
+					tools={['HTML', 'CSS', 'Sass', 'JavaScript', 'Python']}
 				/>
 			</div>
 		</section>
