@@ -25,7 +25,33 @@
 			],
 			"portfolio": {
 				"title": "Portfolio",
-				"subtitle": "Projects made by me or in which I participated."
+				"subtitle": "Projects made by me or in which I participated.",
+				"projects": {
+					"deren": {
+						"name": "creo.deren.com.ua",
+						"href": "https://creo.deren.com.ua/",
+						"tools": ["HTML", "CSS", "Sass", "JavaScript"],
+						"description": "Developed a landing page promoting a new course creative content development. Worked with media queries and responsive design techniques to ensure a mobile-first approach, catering to users on both desktop and mobile. Contributed to a 70% growth in course enrollment within the first launch month."
+					},
+					"meyes": {
+						"name": "meyes.app",
+						"href": "https://meyes.app/",
+						"tools": ["HTML", "CSS", "Sass", "JavaScript", "Python"],
+						"description": "Developed a responsive landing page for a startup called Meyes using HTML, CSS, and JavaScript. Integrated video backgrounds, custom animations, and device detection to correctly display the appropriate store button to increase user engagement and improve visual appeal."
+					},
+					"doe": {
+						"name": "doe.app",
+						"href": null,
+						"tools": ["TypeScript", "React", "Redux", "Less"],
+						"description": "Participated in the development of React components for doe.app, creation of reusable and flexible UI elements, state management using Redux, performance optimisation and integration of the application with the backend via API."
+					},
+					"shop-bakery": {
+						"name": "shop-bakery.com",
+						"href": "https://mescyura.github.io/shop-bakery/",
+						"tools": ["HTML", "CSS", "Sass", "JavaScript"],
+						"description": "Developed a personal project as part of a course genius.space, creating a landing page using HTML, CSS, and JavaScript. Explored responsive web design, worked on animations, and implemented user interactions with JavaScript."
+					}
+				}
 			},
 			"contact_me": {
 				"thanks": "Thanks for reaching out! I'll get back to you soon.",
@@ -60,7 +86,33 @@
 			],
 			"portfolio": {
 				"title": "Портфоліо",
-				"subtitle": "Проекти зроблені мною або в яких я брав участь."
+				"subtitle": "Проекти зроблені мною або в яких я брав участь.",
+				"projects": {
+					"deren": {
+						"name": "creo.deren.com.ua",
+						"href": "https://creo.deren.com.ua/",
+						"tools": ["HTML", "CSS", "Sass", "JavaScript"],
+						"description": "Розробив лендінг для просування нового курсу з розробки креативного контенту. Працював з медіа-запитами та методами адаптивного дизайну, щоб забезпечити mobile-first підходу, орієнтованого на користувачів як настільних, так і мобільних пристроїв. Легдінг забезпечив кількість зареєстрованих на курс, на 70% більше, протягом першого місяця після запуску."
+					},
+					"meyes": {
+						"name": "meyes.app",
+						"href": "https://meyes.app/",
+						"tools": ["HTML", "CSS", "Sass", "JavaScript", "Python"],
+						"description": "Розробив адаптивну цільову сторінку для стартапу Meyes, використовуючи HTML, CSS та JavaScript. Інтегрував відео фон, кастомні анімації та визначення пристрою для правильного відображення відповідної кнопки магазину, щоб підвищити залученість користувачів та покращити візуальну привабливість."
+					},
+					"doe": {
+						"name": "doe.app",
+						"href": null,
+						"tools": ["TypeScript", "React", "Redux", "Less"],
+						"description": "Брав участь у розробці React-компонентів для doe.app, створюючи багаторазові та гнучкі UI-елементи, працюючи з керуванням станом Redux, оптимізуючи продуктивність та інтегруючи застосунок із бекендом через API."
+					},
+					"shop-bakery": {
+						"name": "shop-bakery.com",
+						"href": "https://mescyura.github.io/shop-bakery/",
+						"tools": ["HTML", "CSS", "Sass", "JavaScript"],
+						"description": "Розробив домашній проєкт у рамках навчального курсу genius.space, створивши лендінг-сторінку з використанням HTML, CSS та JavaScript. В процесі роботи розібрав структуру адаптивного веб-дизайну, опрацював анімації та взаємодію з користувачем через JS."
+					}
+				}
 			},
 			"contact_me": {
 				"thanks": "Дякую, що звернулися! Я скоро з вами зв'яжуся.",
@@ -70,19 +122,5 @@
 				"send": "Відправити"
 			}
 		}
-	},
-	"skills": [
-		{ "text": "HTML5", "icon": "html5", "color": "#dd683b" },
-		{ "text": "CSS3", "icon": "css3", "color": "#3f69e9" },
-		{ "text": "JavaScript", "icon": "js", "color": "#ebd94d" },
-		{ "text": "React", "icon": "react", "color": "#79c4da" },
-		{ "text": "Figma", "icon": "figma", "color": "#63cf8d" },
-		{ "text": "Responsive Design", "icon": "code", "color": "#ef7e6e" }
-	],
-	"socialLinks": [
-		{ "href": "https://github.com/mescyura", "icon": "github" },
-		{ "href": "https://linkedin.com/in/yura-holyda", "icon": "linkedin" },
-		{ "href": "https://twitter.com/mescyuraa", "icon": "twitter" },
-		{ "href": "https://t.me/mescyura", "icon": "telegram" }
-	]
+	}
 }

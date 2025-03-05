@@ -12,21 +12,26 @@ import { CiDesktop, CiMobile1 } from 'react-icons/ci';
 import { useState } from 'react';
 import { FiExternalLink } from 'react-icons/fi';
 
+// interface PortfolioProps {
+// 	name: string;
+// 	href?: string;
+// 	mobile?: string;
+// 	desktop?: string;
+// 	tools: string[];
+// }
+
 interface PortfolioProps {
-	name: string;
-	href?: string;
+	project: {
+		name: string;
+		href?: string;
+		tools: string[];
+		description: string;
+	};
 	mobile?: string;
 	desktop?: string;
-	tools: string[];
 }
 
-export const PortfolioItem = ({
-	name,
-	href,
-	mobile,
-	desktop,
-	tools,
-}: PortfolioProps) => {
+export const PortfolioItem = ({ project, mobile, desktop }: PortfolioProps) => {
 	const [view, setView] = useState(false);
 
 	function setPicture(name: string) {
@@ -39,9 +44,25 @@ export const PortfolioItem = ({
 		}
 	}
 
+	console.log(project.name);
+
 	return (
 		<div className={classes.portfolio}>
-			<h1>{name}</h1>
+			<div className={classes.href}>
+				<h1>{project.name}</h1>
+				<a
+					href={project.href}
+					target='_blank'
+					rel='noreferrer'
+					className={classes.href_a}
+				>
+					{project.href ? (
+						<FiExternalLink className={classes.href_icon} />
+					) : (
+						<FiExternalLink className={classes.href_icon_nolink} />
+					)}
+				</a>
+			</div>
 			<div className={classes.img_container}>
 				<img src={view ? mobile : desktop} alt='' />
 			</div>
@@ -60,28 +81,15 @@ export const PortfolioItem = ({
 						/>
 					)}
 				</div>
-				<div className={classes.href}>
-					<a
-						href={href}
-						target='_blank'
-						rel='noreferrer'
-						className={classes.href_a}
-					>
-						{href ? (
-							<FiExternalLink className={classes.href_icon} />
-						) : (
-							<FiExternalLink className={classes.href_icon_nolink} />
-						)}
-					</a>
-				</div>
 			</div>
 			<div className={classes.tools}>
-				{tools.map(tool => (
-					<div id={tool} className={classes.tool}>
+				{project.tools.map(tool => (
+					<div key={tool} className={classes.tool}>
 						{tool}
 					</div>
 				))}
 			</div>
+			<p className={classes.description}>{project.description}</p>
 		</div>
 	);
 };
@@ -102,30 +110,23 @@ export const Portfolio = ({ translations, language }: Props) => {
 			</p>
 			<div className={classes.portfolio_list}>
 				<PortfolioItem
-					name='creo.deren.com.ua'
-					href='https://creo.deren.com.ua/'
+					project={translations[language].portfolio.projects['deren']}
 					mobile={dm}
 					desktop={dd}
-					tools={['HTML', 'CSS', 'Sass', 'JavaScript']}
 				/>
 				<PortfolioItem
-					name='meyes.app'
-					href='https://meyes.app/'
+					project={translations[language].portfolio.projects['meyes']}
 					mobile={mm}
 					desktop={md}
-					tools={['HTML', 'CSS', 'Sass', 'JavaScript', 'Python']}
 				/>
 				<PortfolioItem
-					name='doe.app'
+					project={translations[language].portfolio.projects['doe']}
 					desktop={doed}
-					tools={['TypeScript', 'React', 'Redux', 'Less']}
 				/>
 				<PortfolioItem
-					name='shop-bakery.com'
-					href='https://mescyura.github.io/shop-bakery/'
+					project={translations[language].portfolio.projects['shop-bakery']}
 					mobile={sbm}
 					desktop={sbd}
-					tools={['HTML', 'CSS', 'Sass', 'JavaScript']}
 				/>
 			</div>
 		</section>

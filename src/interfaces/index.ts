@@ -19,6 +19,14 @@ export interface Translations {
 		portfolio: {
 			title: string;
 			subtitle: string;
+			projects: {
+				[key: string]: {
+					name: string;
+					hfer?: string;
+					tools: string[];
+					description: string;
+				};
+			};
 		};
 		contact_me: {
 			thanks: string;
