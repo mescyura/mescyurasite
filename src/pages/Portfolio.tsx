@@ -12,13 +12,38 @@ import { CiDesktop, CiMobile1 } from 'react-icons/ci';
 import { useState } from 'react';
 import { FiExternalLink } from 'react-icons/fi';
 
-// interface PortfolioProps {
-// 	name: string;
-// 	href?: string;
-// 	mobile?: string;
-// 	desktop?: string;
-// 	tools: string[];
-// }
+interface PortfolioItemModalProps {
+	isOpen: boolean;
+	mobile?: string;
+	desktop?: string;
+	onClose: () => void;
+}
+
+export const PortfolioItemModal = ({
+	isOpen,
+	mobile,
+	desktop,
+	onClose,
+}: PortfolioItemModalProps) => {
+	return (
+		<div
+			className={`${classes.modal_overlay} ${isOpen ? '' : classes.is_hidden}`}
+		>
+			<div className={classes.modal}>
+				<button className={classes.modal_close} onClick={onClose}>
+					×
+				</button>
+				<div className={classes.modal_img_container}>
+					<img src={desktop} alt='' />
+				</div>
+
+				<div className={classes.modal_img_container}>
+					<img src={mobile} alt='' />
+				</div>
+			</div>
+		</div>
+	);
+};
 
 interface PortfolioProps {
 	project: {
@@ -33,6 +58,17 @@ interface PortfolioProps {
 
 export const PortfolioItem = ({ project, mobile, desktop }: PortfolioProps) => {
 	const [view, setView] = useState(false);
+	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+	function modalOpen() {
+		setIsModalOpen(true);
+		document.body.classList.toggle('is-scroll-disabled');
+	}
+
+	function modalCLose() {
+		setIsModalOpen(false);
+		document.body.classList.toggle('is-scroll-disabled');
+	}
 
 	function setPicture(name: string) {
 		if (name === 'desktop' && view != false) {
@@ -44,53 +80,61 @@ export const PortfolioItem = ({ project, mobile, desktop }: PortfolioProps) => {
 		}
 	}
 
-	console.log(project.name);
-
 	return (
-		<div className={classes.portfolio}>
-			<div className={classes.href}>
-				<h1>{project.name}</h1>
-				<a
-					href={project.href}
-					target='_blank'
-					rel='noreferrer'
-					className={classes.href_a}
-				>
-					{project.href ? (
-						<FiExternalLink className={classes.href_icon} />
-					) : (
-						<FiExternalLink className={classes.href_icon_nolink} />
-					)}
-				</a>
-			</div>
-			<div className={classes.img_container}>
-				<img src={view ? mobile : desktop} alt='' />
-			</div>
-			<div className={classes.info}>
-				<div className={classes.view}>
-					{desktop && (
-						<CiDesktop
-							onClick={() => setPicture('desktop')}
-							className={view ? classes.icon : classes.icon_active}
-						/>
-					)}
-					{mobile && (
-						<CiMobile1
-							onClick={() => setPicture('mobile')}
-							className={view ? classes.icon_active : classes.icon}
-						/>
-					)}
+		<>
+			<div className={classes.portfolio}>
+				<div className={classes.href}>
+					<h1>{project.name}</h1>
+					<a
+						href={project.href}
+						target='_blank'
+						rel='noreferrer'
+						className={classes.href_a}
+					>
+						{project.href ? (
+							<FiExternalLink className={classes.href_icon} />
+						) : (
+							<FiExternalLink className={classes.href_icon_nolink} />
+						)}
+					</a>
 				</div>
-			</div>
-			<div className={classes.tools}>
-				{project.tools.map(tool => (
-					<div key={tool} className={classes.tool}>
-						{tool}
+				<div className={classes.img_container} onClick={modalOpen}>
+					<img src={view ? mobile : desktop} alt='' />
+				</div>
+				<div className={classes.info}>
+					<div className={classes.view}>
+						{desktop && (
+							<CiDesktop
+								onClick={() => setPicture('desktop')}
+								className={view ? classes.icon : classes.icon_active}
+							/>
+						)}
+						{mobile && (
+							<CiMobile1
+								onClick={() => setPicture('mobile')}
+								className={view ? classes.icon_active : classes.icon}
+							/>
+						)}
 					</div>
-				))}
+				</div>
+				<div className={classes.tools}>
+					{project.tools.map(tool => (
+						<div key={tool} className={classes.tool}>
+							{tool}
+						</div>
+					))}
+				</div>
+				<p className={classes.description}>{project.description}</p>
 			</div>
-			<p className={classes.description}>{project.description}</p>
-		</div>
+			{isModalOpen && (
+				<PortfolioItemModal
+					isOpen={isModalOpen}
+					mobile={mobile}
+					desktop={desktop}
+					onClose={modalCLose}
+				/>
+			)}
+		</>
 	);
 };
 

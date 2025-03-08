@@ -44,6 +44,10 @@ body {
 	transition: all 0.3s ease;
 }
 
+.is-scroll-disabled {
+	overflow: hidden;
+}
+
 /* body::before {
 	content: '';
 	position: absolute;
