@@ -14,15 +14,19 @@ import { FiExternalLink } from 'react-icons/fi';
 
 interface PortfolioItemModalProps {
 	isOpen: boolean;
+	view: boolean;
 	mobile?: string;
 	desktop?: string;
+	setPicture: (name: string) => void;
 	onClose: () => void;
 }
 
 export const PortfolioItemModal = ({
 	isOpen,
+	view,
 	mobile,
 	desktop,
+	setPicture,
 	onClose,
 }: PortfolioItemModalProps) => {
 	return (
@@ -33,12 +37,22 @@ export const PortfolioItemModal = ({
 				<button className={classes.modal_close} onClick={onClose}>
 					×
 				</button>
-				<div className={classes.modal_img_container}>
-					<img src={desktop} alt='' />
+				<div className={classes.view}>
+					{desktop && (
+						<CiDesktop
+							onClick={() => setPicture('desktop')}
+							className={view ? classes.icon : classes.icon_active}
+						/>
+					)}
+					{mobile && (
+						<CiMobile1
+							onClick={() => setPicture('mobile')}
+							className={view ? classes.icon_active : classes.icon}
+						/>
+					)}
 				</div>
-
 				<div className={classes.modal_img_container}>
-					<img src={mobile} alt='' />
+					<img src={view ? mobile : desktop} alt='' />
 				</div>
 			</div>
 		</div>
@@ -129,8 +143,10 @@ export const PortfolioItem = ({ project, mobile, desktop }: PortfolioProps) => {
 			{isModalOpen && (
 				<PortfolioItemModal
 					isOpen={isModalOpen}
+					view={view}
 					mobile={mobile}
 					desktop={desktop}
+					setPicture={setPicture}
 					onClose={modalCLose}
 				/>
 			)}
