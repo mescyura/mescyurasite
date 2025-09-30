@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import { Translations } from './interfaces';
 
@@ -96,6 +97,7 @@ function App() {
 				<Footer />
 			</BrowserRouter>
 			<Analytics />
+			<SpeedInsights />
 		</div>
 	);
 }
