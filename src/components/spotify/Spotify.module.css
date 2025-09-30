@@ -1,4 +1,5 @@
 .spotify {
+	align-self: self-start;
 	display: flex;
 	flex-direction: column;
 	align-items: start;
@@ -6,6 +7,21 @@
 	gap: 6px;
 	animation: fadeIn 0.5s ease-out;
 }
+
+.spotify_header {
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	animation: fadeIn 0.5s ease-out;
+	color: var(--secondary-text);
+}
+
+/* .spotify_header svg path {
+	color: var(--spotify);
+} */
 
 @keyframes fadeIn {
 	from {
@@ -36,16 +52,16 @@
 }
 
 .spotify img {
-	width: 30px;
-	height: 30px;
-
+	width: 36px;
+	height: 36px;
 	object-fit: contain;
 }
 
 .playing {
 	display: flex;
 	gap: 3px;
-	height: 100%;
+	height: 50%;
+	align-self: flex-end;
 	text-align: center;
 	font-size: 10px;
 	-webkit-transition: all 0.2s ease;
@@ -60,9 +76,8 @@
 	transition: all 0.2s ease;
 	-webkit-animation: wavy 1s ease infinite forwards;
 	animation: wavy 1s ease infinite forwards;
-	-webkit-transform-origin: 50% 50%;
-	transform-origin: 50% 50%;
-	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.33);
+	-webkit-transform-origin: 0% 100%;
+	transform-origin: 0% 100%;
 }
 .playing .rect2 {
 	-webkit-animation-delay: 0.25s;
@@ -82,30 +97,30 @@
 }
 @-webkit-keyframes wavy {
 	0% {
-		-webkit-transform: scaleY(1);
-		transform: scaleY(1);
+		-webkit-transform: scaleY(0.3);
+		transform: scaleY(0.3);
 	}
 	50% {
-		-webkit-transform: scaleY(0.6);
-		transform: scaleY(0.6);
-	}
-	100% {
 		-webkit-transform: scaleY(1);
 		transform: scaleY(1);
+	}
+	100% {
+		-webkit-transform: scaleY(0.3);
+		transform: scaleY(0.3);
 	}
 }
 @keyframes wavy {
 	0% {
-		-webkit-transform: scaleY(1);
-		transform: scaleY(1);
+		-webkit-transform: scaleY(0.3);
+		transform: scaleY(0.3);
 	}
 	50% {
-		-webkit-transform: scaleY(0.6);
-		transform: scaleY(0.6);
-	}
-	100% {
 		-webkit-transform: scaleY(1);
 		transform: scaleY(1);
+	}
+	100% {
+		-webkit-transform: scaleY(0.3);
+		transform: scaleY(0.3);
 	}
 }
 

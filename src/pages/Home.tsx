@@ -14,6 +14,8 @@ import {
 	SiSass,
 	SiTailwindcss,
 	SiTypescript,
+	SiVercel,
+	SiBootstrap,
 } from 'react-icons/si';
 
 import { TechItem } from '../components/techItem/TechItem';
@@ -23,9 +25,16 @@ import { Translations } from '../interfaces';
 import img from '../assets/img.webp';
 import classes from './Home.module.css';
 
+const githubToken = import.meta.env.VITE_GITHUB_TOKEN;
+
 async function getStaticProps() {
 	const repos = await fetch(
-		`https://api.github.com/users/mescyura/repos?type=owner&per_page=100`
+		`https://api.github.com/users/mescyura/repos?type=owner&per_page=100`,
+		{
+			headers: {
+				Authorization: `token ${githubToken}`, // ось тут додаєш
+			},
+		}
 	).then(res => res.json());
 
 	const selectedRepoNames = [
@@ -83,15 +92,17 @@ export const Home = ({ translations, language }: Props) => {
 					<TechItem icon={SiHtml5} name='HTML5' />
 					<TechItem icon={SiCss3} name='CSS3' />
 					<TechItem icon={SiSass} name='Sass' />
-					<TechItem icon={SiTailwindcss} name='TailwindCSS' />
+					<TechItem icon={SiTailwindcss} name='Tailwind' />
+					<TechItem icon={SiBootstrap} name='Bootstrap' />
 					<TechItem icon={SiJavascript} name='JavaScript' />
 					<TechItem icon={SiTypescript} name='TypeScript' />
 					<TechItem icon={SiReact} name='React.js' />
 					<TechItem icon={SiNodedotjs} name='Node.js' />
+					<TechItem icon={SiNextdotjs} name='Next.js' />
 					<TechItem icon={VscVscode} name='VSCode' />
 					<TechItem icon={FiFigma} name='Figma' />
+					<TechItem icon={SiVercel} name='Vercel' />
 					<TechItem icon={SiNpm} name='Npm' />
-					<TechItem icon={SiNextdotjs} name='Next.js' />
 					<TechItem icon={SiGit} name='Git' />
 					<TechItem icon={SiMongodb} name='MongoDB' />
 				</div>

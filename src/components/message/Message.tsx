@@ -65,6 +65,12 @@ const Message = ({ translations, language }: Props) => {
 				setTimeout(() => {
 					setSending(false);
 				}, 3000);
+			})
+			.finally(() => {
+				setTimeout(() => {
+					setSending(false);
+					setErrMsg('');
+				}, 3000);
 			});
 	};
 

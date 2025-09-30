@@ -19,6 +19,12 @@
 	}
 }
 
+@media screen and (max-width: 700px) {
+	.hero {
+		padding-inline: 1.5rem;
+	}
+}
+
 .profile {
 	display: flex;
 	flex-direction: row;
