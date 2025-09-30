@@ -30,7 +30,7 @@ function App() {
 	});
 
 	const [language, setLanguage] = useState<string>(() => {
-		return localStorage.getItem('mescyurasite-language') || 'ua';
+		return localStorage.getItem('mescyurasite-language') || 'en';
 	});
 
 	useEffect(() => {
