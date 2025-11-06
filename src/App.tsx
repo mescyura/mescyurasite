@@ -11,6 +11,7 @@ import { Portfolio } from './pages/Portfolio';
 import { Contact } from './pages/Contact';
 import { NotFound } from './pages/NotFound';
 import Footer from './components/footer/Footer';
+import Loader from './components/loader/Loader';
 
 import data from './data/data.json';
 import LetterGlitch from './ui/LetterGlitch/LetterGlitch';
@@ -33,6 +34,16 @@ function App() {
 	const [language, setLanguage] = useState<string>(() => {
 		return localStorage.getItem('mescyurasite-language') || 'en';
 	});
+
+	const [isLoading, setIsLoading] = useState<boolean>(true);
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setIsLoading(false);
+		}, 2000);
+
+		return () => clearTimeout(timer);
+	}, []);
 
 	useEffect(() => {
 		localStorage.setItem('mescyurasite-theme', isDark ? 'dark' : 'light');
@@ -60,6 +71,7 @@ function App() {
 
 	return (
 		<div className='main-content'>
+			{isLoading && <Loader />}
 			<BrowserRouter>
 				<Header
 					toggleTheme={toggleTheme}

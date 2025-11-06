@@ -62,7 +62,7 @@
 	justify-content: space-between;
 }
 .message_text {
-	font-size: 0.875rem;
+	font-size: 0.775rem;
 	line-height: 1.25rem;
 	color: rgba(255, 0, 0, 0.6)
 }

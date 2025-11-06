@@ -59,7 +59,9 @@
 				"email": "EMAIL",
 				"message": "MESSAGE",
 				"message_placehorder": "Hi Yurii, what's up?",
-				"send": "Send"
+				"send": "Send",
+				"error": "Please fill out all fields!",
+				"error_email": "Hmm, that doesn't look like an email."
 			}
 		},
 		"ua": {
@@ -121,7 +123,9 @@
 				"email": "ПОШТА",
 				"message": "ПОВІДОМЛЕНЯ",
 				"message_placehorder": "Привіт Юрій, як справи?",
-				"send": "Відправити"
+				"send": "Відправити",
+				"error": "Будь ласка, заповніть всі поля!",
+				"error_email": "Хмм, це не схоже на електронну пошту."
 			}
 		}
 	}

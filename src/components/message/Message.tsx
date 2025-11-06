@@ -27,9 +27,9 @@ const Message = ({ translations, language }: Props) => {
 
 	const sendMessage = () => {
 		if (email.trim() == '' || message.trim() == '')
-			return setErrMsg('Please fill out all fields!');
+			return setErrMsg(translations[language].contact_me.error);
 		if (!emailRegex.test(email))
-			return setErrMsg("Hmm, that doesn't look like an email.");
+			return setErrMsg(translations[language].contact_me.error_email);
 
 		setSending(true);
 

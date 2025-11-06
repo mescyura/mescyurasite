@@ -35,6 +35,8 @@ export interface Translations {
 			message: string;
 			message_placehorder: string;
 			send: string;
+			error: string;
+			error_email: string;
 		};
 	};
 }
