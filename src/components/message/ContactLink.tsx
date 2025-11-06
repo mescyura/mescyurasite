@@ -14,7 +14,7 @@ const ContactLink = ({
 	link: string;
 }) => {
 	return (
-		<Link to={link} className={classes.contact_link}>
+		<Link to={link} target='_blank' className={classes.contact_link}>
 			{icon}
 			<h1>{name}</h1>
 			<FiExternalLink />

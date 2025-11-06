@@ -5,7 +5,8 @@ import Message from '../components/message/Message';
 import TimeStatus from '../components/timeStatus/TimeStatus';
 import { Translations } from '../interfaces';
 import classes from './Contact.module.css';
-import { FiMail } from 'react-icons/fi';
+import contactLinkClasses from '../components/message/ContactLink.module.css';
+import { FiMail, FiDownload } from 'react-icons/fi';
 
 interface Props {
 	translations: Translations;
@@ -50,6 +51,15 @@ export const Contact = ({ translations, language }: Props) => {
 						icon={<FiMail className={classes.link_icon} />}
 						link='mailto:mescyura@gmail.com'
 					/>
+
+					<a
+						href='/Holyda_Yurii_CV.pdf'
+						download
+						className={contactLinkClasses.contact_link}
+					>
+						<FiDownload className={classes.link_icon} />
+						<h1>{translations[language].download_cv}</h1>
+					</a>
 				</div>
 			</div>
 		</section>

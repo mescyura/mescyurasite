@@ -15,6 +15,7 @@ export interface Translations {
 		projects_info: string;
 		chat: string;
 		chat_info: string;
+		download_cv: string;
 		time: string[];
 		portfolio: {
 			title: string;
