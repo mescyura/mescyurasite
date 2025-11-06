@@ -38,6 +38,10 @@ export interface Translations {
 			error: string;
 			error_email: string;
 		};
+		spotify: {
+			title: string;
+			not_listening: string;
+		};
 	};
 }
 

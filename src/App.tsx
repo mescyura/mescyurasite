@@ -106,7 +106,7 @@ function App() {
 					outerVignette={true}
 					smooth={true}
 				/>
-				<Footer />
+				<Footer translations={translations} language={language} />
 			</BrowserRouter>
 			<Analytics />
 			<SpeedInsights />

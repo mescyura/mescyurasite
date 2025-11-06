@@ -62,6 +62,10 @@
 				"send": "Send",
 				"error": "Please fill out all fields!",
 				"error_email": "Hmm, that doesn't look like an email."
+			},
+			"spotify": {
+				"title": "Currently listening on Spotify :",
+				"not_listening": "Currently not listening to Spotify"
 			}
 		},
 		"ua": {
@@ -126,6 +130,10 @@
 				"send": "Відправити",
 				"error": "Будь ласка, заповніть всі поля!",
 				"error_email": "Хмм, це не схоже на електронну пошту."
+			},
+			"spotify": {
+				"title": "Зараз слухаю на Spotify :",
+				"not_listening": "Не слухаю зараз Spotify"
 			}
 		}
 	}

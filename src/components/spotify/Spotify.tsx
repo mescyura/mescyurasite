@@ -1,3 +1,4 @@
+import { Translations } from '../../interfaces';
 import classes from './Spotify.module.css';
 import { useEffect, useState } from 'react';
 
@@ -11,7 +12,12 @@ interface SpotifyData {
 	track_id: string;
 }
 
-export const Spotify = () => {
+interface Props {
+	translations: Translations;
+	language: string;
+}
+
+export const Spotify = ({ translations, language }: Props) => {
 	const [spotify, setSpotify] = useState<SpotifyData | null>(null);
 
 	useEffect(() => {
@@ -53,8 +59,8 @@ export const Spotify = () => {
 				</svg>
 				<h2>
 					{spotify
-						? 'Currently listening on Spotify :'
-						: 'Currently not listening to Spotify'}
+						? translations[language].spotify.title
+						: translations[language].spotify.not_listening}
 				</h2>
 			</div>
 			{spotify && (
