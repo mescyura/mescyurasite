@@ -50,7 +50,7 @@ body {
 	overflow: hidden;
 }
 
-/* body::before {
+body::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -61,7 +61,7 @@ body {
 	clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
 	z-index: -1;
 	transition: all 0.3s ease;
-} */
+}
 
 .main-content {
 	max-width: 50rem;
