@@ -124,6 +124,7 @@ export const Home = ({ translations, language }: Props) => {
 										stars={repo.stargazers_count}
 										forks={repo.forks_count}
 										language={repo.language}
+										homepage={repo.homepage}
 									/>
 								);
 						  })

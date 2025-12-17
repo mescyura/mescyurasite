@@ -26,6 +26,26 @@
 	color: var(--secondary-text);
 }
 
+.project .links {
+	margin-top: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	gap: 0.5rem;
+}
+
+.project .links p {
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	gap: 0.25rem;
+}
+
+.project p a {
+	color: var(--secondary-text);
+	text-decoration: underline;
+}
+
 .language_data {
 	display: flex;
 	align-items: center;
@@ -54,4 +74,11 @@
 	align-items: center;
 	justify-content: start;
 	gap: 0.5rem;
+}
+
+
+.link_icon {
+	width: 1.5rem;
+	height: 1.5rem;
+	color: var(--secondary-text);
 }
