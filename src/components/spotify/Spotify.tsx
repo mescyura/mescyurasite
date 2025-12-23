@@ -2,8 +2,7 @@ import { Translations } from '../../interfaces';
 import classes from './Spotify.module.css';
 import { useEffect, useState } from 'react';
 
-const DISCORD_ID = '316947490991636482';
-
+const DISCORD_ID = import.meta.env.VITE_DISCORD_ID;
 interface SpotifyData {
 	song: string;
 	artist: string;
