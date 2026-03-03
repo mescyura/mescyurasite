@@ -38,7 +38,7 @@ async function getStaticProps() {
 	).then(res => res.json());
 
 	const selectedRepoNames = [
-		'task-manager-app',
+		'todo-list-app',
 		'react-calculator',
 		'mescyurasite',
 		'rock-paper-scissors',
