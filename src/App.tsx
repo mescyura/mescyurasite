@@ -17,10 +17,12 @@ import data from './data/data.json';
 import LetterGlitch from './ui/LetterGlitch/LetterGlitch';
 
 function App() {
+	const location = window.location.href;
+
 	const translations: Translations = data.translations;
 
 	const [isDark, setIsDark] = useState<boolean>(() => {
-		const savedTheme = localStorage.getItem('mescyurasite-theme');
+		const savedTheme = localStorage.getItem(`${location}-theme`);
 		if (savedTheme) {
 			return savedTheme === 'dark';
 		}
@@ -32,7 +34,7 @@ function App() {
 	});
 
 	const [language, setLanguage] = useState<string>(() => {
-		return localStorage.getItem('mescyurasite-language') || 'en';
+		return localStorage.getItem(`${location}-language`) || 'en';
 	});
 
 	const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -46,7 +48,7 @@ function App() {
 	}, []);
 
 	useEffect(() => {
-		localStorage.setItem('mescyurasite-theme', isDark ? 'dark' : 'light');
+		localStorage.setItem(`${location}-theme`, isDark ? 'dark' : 'light');
 		document.documentElement.setAttribute(
 			'data-theme',
 			isDark ? 'dark' : 'light'
@@ -54,7 +56,7 @@ function App() {
 	}, [isDark]);
 
 	useEffect(() => {
-		localStorage.setItem('mescyurasite-language', language);
+		localStorage.setItem(`${location}-language`, language);
 	}, [language]);
 
 	const toggleTheme = () => {
