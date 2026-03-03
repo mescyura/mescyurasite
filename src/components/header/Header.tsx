@@ -165,19 +165,19 @@ export const Header = ({
 						>
 							<div className={classes.mobile_menu_content}>
 								<MobileLandingButton
-									name='Home'
+									name={translations[language].header.home}
 									link='/'
 									selected={location.pathname === '/'}
 									onClick={() => setMenuOpen(false)}
 								/>
 								<MobileLandingButton
-									name='Portfolio'
+									name={translations[language].header.portfolio}
 									link='/portfolio'
 									selected={location.pathname === '/portfolio'}
 									onClick={() => setMenuOpen(false)}
 								/>
 								<MobileLandingButton
-									name='Contact'
+									name={translations[language].header.contact}
 									link='/contact'
 									selected={location.pathname === '/contact'}
 									onClick={() => setMenuOpen(false)}

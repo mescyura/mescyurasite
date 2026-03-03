@@ -14,7 +14,7 @@ const Footer = ({ translations, language }: Props) => {
 		<div className={classes.footer}>
 			<div className={classes.text}>
 				<h1>Yurii Holyda</h1>
-				<h2>Frontend Developer • {date.getFullYear()}</h2>
+				<h2>Web Developer • {date.getFullYear()}</h2>
 			</div>
 			<Spotify translations={translations} language={language} />
 		</div>

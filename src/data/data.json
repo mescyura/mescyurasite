@@ -66,6 +66,12 @@
 			"spotify": {
 				"title": "Currently listening on Spotify :",
 				"not_listening": "Currently not listening to Spotify"
+			},
+			"not_found": {
+				"title": "Lost in the void",
+				"subtitle": "The page you're looking for doesn't exist, moved away, or is hiding in another universe.",
+				"back_to_home": "Back to home",
+				"go_back": "Go back"
 			}
 		},
 		"ua": {
@@ -134,6 +140,12 @@
 			"spotify": {
 				"title": "Зараз слухаю на Spotify :",
 				"not_listening": "Не слухаю зараз Spotify"
+			},
+			"not_found": {
+				"title": "Загублено в порожнечі",
+				"subtitle": "Сторінка, яку ви шукаєте, не існує, переїхала або переховується в іншому всесвіті.",
+				"back_to_home": "На головну",
+				"go_back": "Назад"
 			}
 		}
 	}

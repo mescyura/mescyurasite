@@ -98,7 +98,12 @@ function App() {
 							<Contact translations={translations} language={language} />
 						}
 					/>
-					<Route path='/*' element={<NotFound />} />
+					<Route
+						path='/*'
+						element={
+							<NotFound translations={translations} language={language} />
+						}
+					/>
 				</Routes>
 				<LetterGlitch
 					glitchSpeed={50}

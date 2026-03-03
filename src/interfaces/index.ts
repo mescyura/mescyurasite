@@ -42,6 +42,12 @@ export interface Translations {
 			title: string;
 			not_listening: string;
 		};
+		not_found: {
+			title: string;
+			subtitle: string;
+			back_to_home: string;
+			go_back: string;
+		};
 	};
 }
 
