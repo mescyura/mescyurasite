@@ -1,50 +1,39 @@
-# React + TypeScript + Vite
+### mescyurasite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Особисте портфоліо та сайт-резюме**, побудований на **React + TypeScript + Vite** з підтримкою темної/світлої теми, перемиканням мови (EN/UA), окремими сторінками для портфоліо та контактів, а також кастомним екраном 404.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Стек
 
-## Expanding the ESLint configuration
+- **Фреймворк**: React 18 + TypeScript
+- **Білдер**: Vite
+- **Маршрутизація**: `react-router-dom`
+- **UI / анімації**: CSS Modules, кастомні анімації, `framer-motion`, `react-icons`
+- **Аналітика**: `@vercel/analytics`, `@vercel/speed-insights`
+- **Інше**: `axios`, `three`, `use-lanyard`, тултіпи (`@tippyjs/react`, `react-tooltip`)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+### Основні можливості
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Головна (`/`)**:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+  - Блок профілю з аватаром, короткий опис, хобі та стек технологій.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+  - Список вибраних GitHub-репозиторіїв, що підтягуються через GitHub API.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- **Портфоліо (`/portfolio`)**:
+  - Картки проєктів з описом, інструментами, прев’ю та посиланнями.
+  - Модальне вікно для перегляду скріншотів.
+- **Контакти (`/contact`)**:
+  - Посилання на соцмережі та email.
+- **Not Found (`/*`)**:
+  - Кастомна 404-сторінка з великим `404`, описом і кнопками переходу на головну/назад.
+- **Тема та мова**:
+
+  - Перемикач теми (light/dark), стан зберігається в `localStorage`.
+  - Перемикання мови (EN/UA), тексти беруться з `data.json` (`translations`), вибір також зберігається в `localStorage`.
+  - Лайв-відображення того, яку музику ти зараз слухаєш на **Spotify**.
+
+---
