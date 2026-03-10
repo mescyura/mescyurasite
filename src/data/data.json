@@ -51,6 +51,12 @@
 						"href": "https://mescyura.github.io/shop-bakery/",
 						"tools": ["HTML", "CSS", "Sass", "JavaScript"],
 						"description": "Developed a personal project as part of a course genius.space, creating a landing page using HTML, CSS, and JavaScript. Explored responsive web design, worked on animations, and implemented user interactions with JavaScript."
+					},
+					"todo-app": {
+						"name": "todo-app.com",
+						"href": "https://todo-list-app-six-gamma.vercel.app/",
+						"tools": ["TypeScript", "Next.js", "Tailwind", "Supabase", "Clerk"],
+						"description": "Todo App - is a web app for task management using a kanban board system. Users can create boards, columns, and tasks with priorities and due dates, and move them between columns using drag & drop. Data is stored in Supabase, and authentication is handled by Clerk. The dashboard includes board search and filters, while tasks can be filtered by priority and date. Tasks can be edited in a modal with instant database updates. The interface is responsive and built with Next.js, App Router, Tailwind CSS, and shadcn/ui."
 					}
 				}
 			},
@@ -125,6 +131,12 @@
 						"href": "https://mescyura.github.io/shop-bakery/",
 						"tools": ["HTML", "CSS", "Sass", "JavaScript"],
 						"description": "Розробив домашній проєкт у рамках навчального курсу genius.space, створивши лендінг-сторінку з використанням HTML, CSS та JavaScript. В процесі роботи розібрав структуру адаптивного веб-дизайну, опрацював анімації та взаємодію з користувачем через JS."
+					},
+					"todo-app": {
+						"name": "todo-app.com",
+						"href": "https://todo-list-app-six-gamma.vercel.app/",
+						"tools": ["TypeScript", "Next.js", "Tailwind", "Supabase", "Clerk"],
+						"description": "Todo App — веб-додаток для управління задачами у форматі канбан-дошок. Користувачі можуть створювати дошки, колонки та задачі з пріоритетами і дедлайнами, а також переміщувати їх між колонками за допомогою drag & drop. Дані зберігаються в Supabase, а аутентифікація реалізована через Clerk. У дашборді доступні пошук і фільтри по дошках, а задачі можна фільтрувати за пріоритетом і датою. Кожну задачу можна відкрити в модальному вікні та редагувати з миттєвим збереженням у базі. Інтерфейс адаптивний і побудований на Next.js, App Router, Tailwind CSS та shadcn/ui."
 					}
 				}
 			},

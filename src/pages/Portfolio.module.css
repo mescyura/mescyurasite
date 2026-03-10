@@ -50,6 +50,10 @@ h1 {
 	gap: 0.5rem;
 }
 
+.portfolio_list > *:last-child:nth-child(odd) {
+	grid-column: 1 / -1;
+}
+
 .portfolio {
 	display: flex;
 	flex-direction: column;
@@ -72,8 +76,9 @@ h1 {
 }
 
 .portfolio .img_container {
-	height: 200px; /* Set max height */
 	width: 100%;
+	height: auto;
+	max-height: 300px;
 	overflow: hidden;
 	display: flex;
 	justify-content: center;

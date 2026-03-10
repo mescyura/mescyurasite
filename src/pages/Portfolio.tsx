@@ -8,6 +8,8 @@ import mm from '../assets/meyes-mobile.webp';
 import sbd from '../assets/shopbakery-desktop.webp';
 import sbm from '../assets/shopbakery-mobile.webp';
 import doed from '../assets/doe-desktop.webp';
+import todod from '../assets/todoapp-desktop.webp';
+import todom from '../assets/todoapp-mobile.webp';
 import { CiDesktop, CiMobile1 } from 'react-icons/ci';
 import { useState } from 'react';
 import { FiExternalLink } from 'react-icons/fi';
@@ -187,6 +189,11 @@ export const Portfolio = ({ translations, language }: Props) => {
 					project={translations[language].portfolio.projects['shop-bakery']}
 					mobile={sbm}
 					desktop={sbd}
+				/>
+				<PortfolioItem
+					project={translations[language].portfolio.projects['todo-app']}
+					mobile={todom}
+					desktop={todod}
 				/>
 			</div>
 		</section>
