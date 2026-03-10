@@ -37,18 +37,21 @@ async function getStaticProps() {
 		}
 	).then(res => res.json());
 
-	const selectedRepoNames = [
+	const orderedRepos = [
+		'mescyurasite',
 		'todo-list-app',
 		'react-calculator',
-		'mescyurasite',
 		'rock-paper-scissors',
 		'tetris',
 		'shop-bakery',
 	];
 
-	const topRepos = repos.filter((repo: { name: string }) =>
-		selectedRepoNames.includes(repo.name)
-	);
+	const topRepos = repos
+		.filter((repo: { name: string }) => orderedRepos.includes(repo.name))
+		.sort(
+			(a: { name: string }, b: { name: string }) =>
+				orderedRepos.indexOf(a.name) - orderedRepos.indexOf(b.name)
+		);
 
 	return {
 		props: { topRepos },
