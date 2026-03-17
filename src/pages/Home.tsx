@@ -34,12 +34,13 @@ async function getStaticProps() {
 			headers: {
 				Authorization: `token ${githubToken}`, // ось тут додаєш
 			},
-		}
+		},
 	).then(res => res.json());
 
 	const orderedRepos = [
 		'mescyurasite',
 		'todo-list-app',
+		'quick-notes-app',
 		'react-calculator',
 		'rock-paper-scissors',
 		'tetris',
@@ -50,7 +51,7 @@ async function getStaticProps() {
 		.filter((repo: { name: string }) => orderedRepos.includes(repo.name))
 		.sort(
 			(a: { name: string }, b: { name: string }) =>
-				orderedRepos.indexOf(a.name) - orderedRepos.indexOf(b.name)
+				orderedRepos.indexOf(a.name) - orderedRepos.indexOf(b.name),
 		);
 
 	return {
@@ -118,7 +119,7 @@ export const Home = ({ translations, language }: Props) => {
 				<div className={classes.projects_list}>
 					{topRepos.length !== 0
 						? // eslint-disable-next-line @typescript-eslint/no-explicit-any
-						  topRepos.map((repo: Record<string, any>) => {
+							topRepos.map((repo: Record<string, any>) => {
 								return (
 									<RepoItem
 										key={repo.name}
@@ -130,7 +131,7 @@ export const Home = ({ translations, language }: Props) => {
 										homepage={repo.homepage}
 									/>
 								);
-						  })
+							})
 						: 'Loading...'}
 				</div>
 			</section>

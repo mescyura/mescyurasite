@@ -8,6 +8,7 @@ const Languages = {
 	TypeScript: '#3178c6',
 	JavaScript: '#f1e05a',
 	HTML: '#d25735',
+	CSS: '#663399',
 };
 
 interface RepoProps {

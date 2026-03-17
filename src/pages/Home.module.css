@@ -68,3 +68,7 @@ h1 {
 	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 	gap: 0.5rem;
 }
+
+.projects_list > *:last-child:nth-child(odd) {
+	grid-column: 1 / -1;
+}
