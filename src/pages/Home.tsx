@@ -45,6 +45,7 @@ async function getStaticProps() {
 		'rock-paper-scissors',
 		'tetris',
 		'shop-bakery',
+		'pokemon-dex',
 	];
 
 	const topRepos = repos
