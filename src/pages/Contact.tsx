@@ -52,14 +52,11 @@ export const Contact = ({ translations, language }: Props) => {
 						link='mailto:mescyura@gmail.com'
 					/>
 
-					<a
-						href='/Holyda_Yurii_CV.pdf'
-						target='_blank'
-						className={contactLinkClasses.contact_link}
-					>
-						<FiDownload className={classes.link_icon} />
-						<h1>{translations[language].download_cv}</h1>
-					</a>
+					<ContactLink
+						name={translations[language].download_cv}
+						icon={<FiDownload className={classes.link_icon} />}
+						link='/Holyda_Yurii_CV.pdf'
+					/>
 				</div>
 			</div>
 		</section>
