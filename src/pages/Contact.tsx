@@ -54,7 +54,7 @@ export const Contact = ({ translations, language }: Props) => {
 
 					<a
 						href='/Holyda_Yurii_CV.pdf'
-						download
+						target='_blank'
 						className={contactLinkClasses.contact_link}
 					>
 						<FiDownload className={classes.link_icon} />

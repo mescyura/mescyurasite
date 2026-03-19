@@ -81,14 +81,6 @@ export const Header = ({
 		window.scrollTo(0, 0);
 	}, [location]);
 
-	// useEffect(() => {
-	// 	if (typeof window === 'undefined') {
-	// 		return;
-	// 	}
-
-	// 	void new Audio('/pop.mp3').play().catch(() => null);
-	// }, [location.pathname]);
-
 	return (
 		<>
 			<header className={classes.header}>
@@ -160,7 +152,7 @@ export const Header = ({
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
 							exit={{ opacity: 0 }}
-							transition={{ duration: 0.1, ease: 'easeInOut' }}
+							transition={{ duration: 0.3, ease: 'easeInOut' }}
 							className={classes.backdrop}
 						>
 							<div className={classes.mobile_menu_content}>

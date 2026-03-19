@@ -11,6 +11,10 @@
 }
 
 .project:hover {
+	transform: translateY(-2px);
+}
+
+.project:hover {
 	border: 1px solid var(--text);
 }
 
@@ -75,7 +79,6 @@
 	justify-content: start;
 	gap: 0.5rem;
 }
-
 
 .link_icon {
 	width: 1.5rem;

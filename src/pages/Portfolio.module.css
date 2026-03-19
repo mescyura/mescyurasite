@@ -67,6 +67,10 @@ h1 {
 }
 
 .portfolio:hover {
+	transform: translateY(-2px);
+}
+
+.portfolio:hover {
 	border: 1px solid var(--text);
 }
 
@@ -197,7 +201,9 @@ h1 {
 	z-index: 1000;
 	opacity: 1;
 	visibility: visible;
-	transition: opacity 0.3s, visibility 0.3s;
+	transition:
+		opacity 0.3s,
+		visibility 0.3s;
 }
 
 .modal_overlay.is_hidden {

@@ -184,8 +184,7 @@
 .mobile_menu_content {
 	display: flex;
 	width: 100%;
-	flex-direction: row;
-	flex-wrap: wrap;
+	flex-direction: column;
 }
 
 .mobile_menu_content_link {

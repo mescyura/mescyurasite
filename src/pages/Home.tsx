@@ -16,6 +16,8 @@ import {
 	SiTypescript,
 	SiVercel,
 	SiBootstrap,
+	SiSupabase,
+	SiPostgresql,
 } from 'react-icons/si';
 
 import { TechItem } from '../components/techItem/TechItem';
@@ -109,7 +111,9 @@ export const Home = ({ translations, language }: Props) => {
 					<TechItem icon={SiVercel} name='Vercel' />
 					<TechItem icon={SiNpm} name='Npm' />
 					<TechItem icon={SiGit} name='Git' />
+					<TechItem icon={SiSupabase} name='Supabase' />
 					<TechItem icon={SiMongodb} name='MongoDB' />
+					<TechItem icon={SiPostgresql} name='Postgresql' />
 				</div>
 				<div className={classes.profile}>
 					<h1>{translations[language].projects} 🛠️</h1>
