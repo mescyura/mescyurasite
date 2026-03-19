@@ -64,13 +64,14 @@
 .message_text {
 	font-size: 0.775rem;
 	line-height: 1.25rem;
-	color: rgba(255, 0, 0, 0.6)
+	color: rgba(255, 0, 0, 0.6);
 }
 .message_btn {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
+	gap: 0.25rem;
 	border-radius: 9999px;
 	border-width: 1px;
 	border-color: rgb(31, 41, 55);
@@ -81,17 +82,27 @@
 	font-size: 0.875rem;
 	line-height: 1.25rem;
 	font-weight: 500;
-	transition-property: color, background-color, border-color,
-		text-decoration-color, fill, stroke;
+	transition-property:
+		color, background-color, border-color, text-decoration-color, fill, stroke;
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	transition-duration: 75ms;
 	border: none;
 	background-color: var(--text);
 	color: var(--primary);
 	cursor: pointer;
+	transition: all 0.2s ease-in-out;
 }
+
+.message_btn:hover {
+	transform: translateY(-1px);
+}
+
+.message_btn:hover .message_btn_icon_send {
+	transform: translateX(2px);
+}
+
 .message_btn_icon_send {
-	margin-left: 0.5rem;
+	transition: all 0.2s ease-in-out;
 }
 
 .message_btn_icon_spinner {

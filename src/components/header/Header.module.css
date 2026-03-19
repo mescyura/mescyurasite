@@ -24,7 +24,7 @@
 	}
 }
 
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 640px) {
 	.header {
 		margin-top: 0;
 		border: none;
@@ -44,7 +44,7 @@
 	margin-right: auto;
 }
 
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 640px) {
 	.nav {
 		display: none;
 	}
@@ -74,7 +74,7 @@
 	margin: 0;
 }
 
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 640px) {
 	.social {
 		display: none;
 	}
@@ -98,19 +98,22 @@
 	background-color: var(--hover);
 }
 
-.social_btn[href="https://github.com/mescyura"]:hover .social_icon,
-.social_btn[href="https://linkedin.com/in/yura-holyda"]:hover .social_icon
-{
+.social_btn[href='https://github.com/mescyura']:hover .social_icon,
+.social_btn[href='https://linkedin.com/in/yura-holyda']:hover .social_icon {
 	fill: var(--text);
+}
+
+.social_btn[href='https://open.spotify.com/user/22qkxjh5ijs7r7iv3mlp4jhda?si=44b206c0372b4a84']
+	.social_icon {
+	fill: var(--spotify) !important;
 }
 
 .social_btn[href='mailto:mescyura@gmail.com']:hover .social_icon {
 	stroke: var(--text);
 }
 
-.social_btn[href="https://github.com/mescyura"] .social_icon,
-.social_btn[href="https://linkedin.com/in/yura-holyda"] .social_icon
-{
+.social_btn[href='https://github.com/mescyura'] .social_icon,
+.social_btn[href='https://linkedin.com/in/yura-holyda'] .social_icon {
 	width: 20px;
 	height: 20px;
 	fill: #9ca3af;
@@ -131,7 +134,7 @@
 	justify-content: center;
 }
 
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 640px) {
 	.mobile_menu {
 		display: flex;
 	}

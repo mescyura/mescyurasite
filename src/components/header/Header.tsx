@@ -5,7 +5,7 @@ import { LanguageToggle } from '../../ui/LanguageToggle/LanguageToggle';
 import { Link, useLocation } from 'react-router-dom';
 
 import classes from './Header.module.css';
-import { SiGithub, SiLinkedin } from 'react-icons/si';
+import { SiGithub, SiLinkedin, SiSpotify } from 'react-icons/si';
 import { FiMail } from 'react-icons/fi';
 import { useEffect, useState } from 'react';
 import { HiMenu, HiX } from 'react-icons/hi';
@@ -121,6 +121,10 @@ export const Header = ({
 						href='mailto:mescyura@gmail.com'
 						icon={<FiMail href='' className={classes.social_icon} />}
 					/>
+					<LinkButton
+						href='https://open.spotify.com/user/22qkxjh5ijs7r7iv3mlp4jhda?si=44b206c0372b4a84'
+						icon={<SiSpotify href='' className={classes.social_icon} />}
+					/>
 				</div>
 
 				<div className={classes.mobile_menu}>
@@ -190,6 +194,10 @@ export const Header = ({
 								<LinkButton
 									href='mailto:mescyura@gmail.com'
 									icon={<FiMail href='' className={classes.social_icon} />}
+								/>
+								<LinkButton
+									href='https://open.spotify.com/user/22qkxjh5ijs7r7iv3mlp4jhda?si=44b206c0372b4a84'
+									icon={<SiSpotify href='' className={classes.social_icon} />}
 								/>
 							</div>
 						</motion.div>
