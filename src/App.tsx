@@ -17,7 +17,7 @@ import data from './data/data.json';
 import LetterGlitch from './ui/LetterGlitch/LetterGlitch';
 
 function App() {
-	const location = window.location.href;
+	const location = window.location.hostname;
 
 	const translations: Translations = data.translations;
 
