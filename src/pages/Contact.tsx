@@ -5,7 +5,6 @@ import Message from '../components/message/Message';
 import TimeStatus from '../components/timeStatus/TimeStatus';
 import { Translations } from '../interfaces';
 import classes from './Contact.module.css';
-import contactLinkClasses from '../components/message/ContactLink.module.css';
 import { FiMail, FiDownload } from 'react-icons/fi';
 
 interface Props {
