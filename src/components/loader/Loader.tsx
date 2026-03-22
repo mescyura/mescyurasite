@@ -18,7 +18,7 @@
 
 import { useEffect, useState } from 'react';
 import classes from './Loader.module.css';
-import disc from '../../assets/disc.svg'; // імпорт як React-компонент
+import Disc from './Disc';
 
 type Props = {
 	onFinish: () => void;
@@ -82,9 +82,11 @@ export default function Loader({ onFinish }: Props) {
 
 			{phase === 'disk' && (
 				<div className={classes.content}>
-					<svg className={classes.diskSvg}>
-						<use href={disc + '#svg1681'} />
-					</svg>
+					{/* <svg className={classes.diskSvg}>
+						<use href={image + '#svg1681'} />
+					</svg> */}
+
+					<Disc className={classes.diskSvg} />
 
 					<p className={classes.status}>Loading system...</p>
 					<div className={classes.progressBar}>
