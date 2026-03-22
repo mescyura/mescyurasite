@@ -33,7 +33,7 @@ export default function Loader({ onFinish }: Props) {
 		if (!started) return;
 
 		const audio = new Audio('/ps1.mp3');
-		audio.volume = 0.6;
+		audio.volume = 0.4;
 		audio.play().catch(() => {});
 
 		// 0–2с → boot
