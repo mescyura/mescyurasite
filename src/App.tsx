@@ -28,7 +28,7 @@ function App() {
 		}
 
 		const systemTheme = window.matchMedia(
-			'(prefers-color-scheme: dark)'
+			'(prefers-color-scheme: dark)',
 		).matches;
 		return systemTheme;
 	});
@@ -37,21 +37,13 @@ function App() {
 		return localStorage.getItem(`${location}-language`) || 'en';
 	});
 
-	const [isLoading, setIsLoading] = useState<boolean>(true);
-
-	useEffect(() => {
-		const timer = setTimeout(() => {
-			setIsLoading(false);
-		}, 1000);
-
-		return () => clearTimeout(timer);
-	}, []);
+	const [isLoading, setIsLoading] = useState(false);
 
 	useEffect(() => {
 		localStorage.setItem(`${location}-theme`, isDark ? 'dark' : 'light');
 		document.documentElement.setAttribute(
 			'data-theme',
-			isDark ? 'dark' : 'light'
+			isDark ? 'dark' : 'light',
 		);
 	}, [isDark]);
 
@@ -63,7 +55,7 @@ function App() {
 		setIsDark(!isDark);
 		document.documentElement.setAttribute(
 			'data-theme',
-			!isDark ? 'dark' : 'light'
+			!isDark ? 'dark' : 'light',
 		);
 	};
 
@@ -73,48 +65,51 @@ function App() {
 
 	return (
 		<div className='main-content'>
-			{isLoading && <Loader />}
-			<BrowserRouter>
-				<Header
-					toggleTheme={toggleTheme}
-					toggleLanguage={toggleLanguage}
-					isDark={isDark}
-					translations={translations}
-					language={language}
-				/>
+			{/* {isLoading && <Loader />} */}
+			{!isLoading && <Loader onFinish={() => setIsLoading(true)} />}
+			{isLoading && (
+				<BrowserRouter>
+					<Header
+						toggleTheme={toggleTheme}
+						toggleLanguage={toggleLanguage}
+						isDark={isDark}
+						translations={translations}
+						language={language}
+					/>
 
-				<Routes>
-					<Route
-						path='/'
-						element={<Home translations={translations} language={language} />}
-					></Route>
-					<Route
-						path='/portfolio'
-						element={
-							<Portfolio translations={translations} language={language} />
-						}
+					<Routes>
+						<Route
+							path='/'
+							element={<Home translations={translations} language={language} />}
+						></Route>
+						<Route
+							path='/portfolio'
+							element={
+								<Portfolio translations={translations} language={language} />
+							}
+						/>
+						<Route
+							path='/contact'
+							element={
+								<Contact translations={translations} language={language} />
+							}
+						/>
+						<Route
+							path='/*'
+							element={
+								<NotFound translations={translations} language={language} />
+							}
+						/>
+					</Routes>
+					<LetterGlitch
+						glitchSpeed={50}
+						centerVignette={false}
+						outerVignette={true}
+						smooth={true}
 					/>
-					<Route
-						path='/contact'
-						element={
-							<Contact translations={translations} language={language} />
-						}
-					/>
-					<Route
-						path='/*'
-						element={
-							<NotFound translations={translations} language={language} />
-						}
-					/>
-				</Routes>
-				<LetterGlitch
-					glitchSpeed={50}
-					centerVignette={false}
-					outerVignette={true}
-					smooth={true}
-				/>
-				<Footer translations={translations} language={language} />
-			</BrowserRouter>
+					<Footer translations={translations} language={language} />
+				</BrowserRouter>
+			)}
 			<Analytics />
 			<SpeedInsights />
 		</div>

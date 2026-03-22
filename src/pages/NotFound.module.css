@@ -10,6 +10,18 @@
 	justify-content: center;
 	min-height: calc(100vh - 126px - 2rem);
 	overflow: hidden;
+	animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+	from {
+		transform: translateY(50px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
 }
 
 .content {
@@ -70,7 +82,9 @@
 	align-items: center;
 	justify-content: center;
 	text-decoration: none;
-	transition: background-color 0.3s ease, color 0.3s ease,
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease,
 		border-color 0.3s ease;
 	white-space: nowrap;
 }

@@ -5,12 +5,12 @@
 	margin-top: 126px;
 	color: var(--text);
 	margin-bottom: 2rem;
-	animation: slideDown 0.5s ease-out;
+	animation: slideUp 0.5s ease-out;
 }
 
-@keyframes slideDown {
+@keyframes slideUp {
 	from {
-		transform: translateY(-50px);
+		transform: translateY(50px);
 		opacity: 0;
 	}
 	to {
@@ -212,7 +212,7 @@ h1 {
 }
 
 .modal_overlay.is_hidden .modal {
-	transform: translateY(-50px);
+	transform: translateY(50px);
 }
 
 .modal {

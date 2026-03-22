@@ -4,13 +4,13 @@
 	padding-inline: 40px;
 	margin-top: 126px;
 	color: var(--text);
-	animation: slideDown 0.5s ease-out;
+	animation: slideUp 0.5s ease-out;
 	margin-bottom: 2rem;
 }
 
-@keyframes slideDown {
+@keyframes slideUp {
 	from {
-		transform: translateY(-50px);
+		transform: translateY(50px);
 		opacity: 0;
 	}
 	to {
