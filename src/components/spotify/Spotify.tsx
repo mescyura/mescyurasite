@@ -1,14 +1,19 @@
 import { Translations } from '../../interfaces';
 import classes from './Spotify.module.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const DISCORD_ID = import.meta.env.VITE_DISCORD_ID;
+
 interface SpotifyData {
 	song: string;
 	artist: string;
 	album: string;
 	album_art_url: string;
 	track_id: string;
+	timestamps: {
+		start: number;
+		end: number;
+	};
 }
 
 interface Props {
@@ -18,26 +23,90 @@ interface Props {
 
 export const Spotify = ({ translations, language }: Props) => {
 	const [spotify, setSpotify] = useState<SpotifyData | null>(null);
+	const [progress, setProgress] = useState(0);
+	const [currentTime, setCurrentTime] = useState(0);
 
+	const rafRef = useRef<number | null>(null);
+	const lastSecondRef = useRef<number>(-1);
+
+	// WebSocket
 	useEffect(() => {
 		const ws = new WebSocket('wss://api.lanyard.rest/socket');
 
 		ws.onopen = () => {
-			// console.log('✅ WebSocket connected');
 			ws.send(JSON.stringify({ op: 2, d: { subscribe_to_id: DISCORD_ID } }));
 		};
 
 		ws.onmessage = event => {
 			const data = JSON.parse(event.data);
+
 			if (data.t === 'INIT_STATE' || data.t === 'PRESENCE_UPDATE') {
-				setSpotify(data.d.spotify || null);
+				const newSpotify = data.d.spotify || null;
+
+				setSpotify(newSpotify);
+
+				// 🔄 reset при новому треку
+				if (newSpotify) {
+					lastSecondRef.current = -1;
+					setCurrentTime(0);
+					setProgress(0);
+				}
 			}
 		};
 
-		// ws.onclose = () => console.log('🔴 WebSocket disconnected');
-
-		return () => ws.close(); // Закриваємо WebSocket при виході
+		return () => ws.close();
 	}, []);
+
+	useEffect(() => {
+		if (!spotify) return;
+
+		const start = spotify.timestamps.start;
+		const end = spotify.timestamps.end;
+		const duration = end - start;
+
+		const update = () => {
+			const now = Date.now();
+
+			let current = now - start;
+
+			if (current < 0) current = 0;
+
+			if (current >= duration) {
+				setCurrentTime(duration);
+				setProgress(1);
+				return;
+			}
+
+			setProgress(current / duration);
+
+			const currentSecond = Math.floor(current / 1000);
+
+			if (currentSecond !== lastSecondRef.current) {
+				lastSecondRef.current = currentSecond;
+				setCurrentTime(current);
+			}
+
+			rafRef.current = requestAnimationFrame(update);
+		};
+
+		rafRef.current = requestAnimationFrame(update);
+
+		return () => {
+			if (rafRef.current) cancelAnimationFrame(rafRef.current);
+		};
+	}, [spotify]);
+
+	const formatTime = (ms: number) => {
+		const totalSeconds = Math.floor(ms / 1000);
+		const minutes = Math.floor(totalSeconds / 60);
+		const seconds = totalSeconds % 60;
+
+		return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+	};
+
+	const duration = spotify
+		? spotify.timestamps.end - spotify.timestamps.start
+		: 0;
 
 	return (
 		<div className={classes.spotify}>
@@ -62,6 +131,7 @@ export const Spotify = ({ translations, language }: Props) => {
 						: translations[language].spotify.not_listening}
 				</h2>
 			</div>
+
 			{spotify && (
 				<a
 					href={`https://open.spotify.com/track/${spotify.track_id}`}
@@ -75,12 +145,30 @@ export const Spotify = ({ translations, language }: Props) => {
 							<div className={classes.rect3}></div>
 							<div className={classes.rect4}></div>
 							<div className={classes.rect5}></div>
+							<div className={classes.rect6}></div>
+							<div className={classes.rect7}></div>
+							<div className={classes.rect8}></div>
 						</div>
-						<img src={spotify.album_art_url ?? ''} alt={spotify.album} />
+
+						<img src={spotify.album_art_url} alt={spotify.album} />
 
 						<div className={classes.info}>
 							<p className={classes.song}>{spotify.song}</p>
 							<p className={classes.artist}>{spotify.artist}</p>
+
+							{/* ⏱ realtime */}
+							<div className={classes.time}>
+								<span>{formatTime(currentTime)}</span>
+								<span>{formatTime(duration)}</span>
+							</div>
+
+							{/* 📊 progress */}
+							<div className={classes.progress}>
+								<div
+									className={classes.progress_fill}
+									style={{ width: `${progress * 100}%` }}
+								/>
+							</div>
 						</div>
 					</div>
 				</a>

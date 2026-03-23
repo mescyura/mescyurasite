@@ -29,7 +29,12 @@ const RepoItem = ({
 	homepage,
 }: RepoProps) => {
 	return (
-		<div className={classes.project}>
+		<div
+			className={classes.project}
+			style={{
+				borderLeft: `solid 4px ${Languages[language]}`,
+			}}
+		>
 			<h1>{name}</h1>
 			<p>{description}</p>
 			<div className={classes.links}>

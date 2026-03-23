@@ -53,6 +53,8 @@ h1 {
 }
 
 .tech_list {
+	background-color: var(--header);
+	backdrop-filter: blur(16px);
 	display: flex;
 	align-items: center;
 	justify-content: center;

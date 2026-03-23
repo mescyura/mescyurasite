@@ -3,6 +3,8 @@
 	flex-direction: column;
 	align-items: start;
 	padding: 1rem;
+	background-color: var(--header);
+	backdrop-filter: blur(16px);
 	border: 1px solid var(--border);
 	border-radius: 0.375rem;
 	height: 9rem;
@@ -12,10 +14,6 @@
 
 .project:hover {
 	transform: translateY(-2px);
-}
-
-.project:hover {
-	border: 1px solid var(--text);
 }
 
 .project h1 {
