@@ -11,11 +11,23 @@
 	top: 0;
 	left: 50%;
 	transform: translateX(-50%);
-	display: flex;
 	align-items: center;
 	border: 1px solid var(--border);
 	z-index: 999;
 	border-radius: 0.375rem;
+	animation: slideDown 0.7s ease forwards;
+	opacity: 0;
+}
+
+@keyframes slideDown {
+	from {
+		transform: translate(-50%, -20px);
+		opacity: 0;
+	}
+	to {
+		transform: translate(-50%, 0);
+		opacity: 1;
+	}
 }
 
 @media screen and (max-width: 768px) {
