@@ -6,6 +6,12 @@
 	animation: fadeIn 0.5s ease-out;
 }
 
+@media screen and (max-width: 576px) {
+	.spotify {
+		width: 100%;
+	}
+}
+
 /* HEADER */
 
 .spotify_header {
@@ -33,9 +39,11 @@
 	display: flex;
 	align-items: center;
 	gap: 10px;
+	height: 65px;
+	width: 300px;
 	max-width: 300px;
-	padding: 6px 8px;
-	border-radius: 10px;
+	padding: 0.5rem 1rem;
+	border-radius: 1.5rem;
 	background: var(--hover);
 	backdrop-filter: blur(10px);
 	transition: all 0.2s ease;
@@ -43,6 +51,13 @@
 
 .song_wrapper:hover {
 	transform: translateY(-1px);
+}
+
+@media screen and (max-width: 576px) {
+	.song_wrapper {
+		width: 100%;
+		max-width: 100%;
+	}
 }
 
 /* IMAGE */
@@ -183,5 +198,70 @@
 	to {
 		opacity: 1;
 		transform: scale(1);
+	}
+}
+
+.icon_active {
+	color: var(--spotify);
+	filter: drop-shadow(0 0 5px rgba(30, 215, 96, 0.3));
+}
+
+.icon_inactive {
+	color: var(--secondary-text);
+	opacity: 0.5;
+}
+
+/* СТИЛІ ЗАГЛУШКИ */
+
+.song_wrapper.idle {
+	width: 300px;
+	height: 65px;
+	background: var(--hover);
+	border: 1px dashed var(--border);
+	opacity: 0.8;
+}
+
+@media screen and (max-width: 576px) {
+	.song_wrapper.idle {
+		width: 100%;
+		max-width: 100%;
+	}
+}
+
+.idle_icon {
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--hover);
+	border-radius: 1.5rem;
+}
+
+.idle svg {
+	width: 40px;
+	height: 40px;
+
+	position: relative;
+}
+
+/* Пульсація для заглушки (опціонально) */
+.dot::after {
+	content: '';
+	position: absolute;
+	inset: -4px;
+	border: 1px solid var(--secondary-text);
+	border-radius: 50%;
+	animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.5);
+		opacity: 0.8;
+	}
+	100% {
+		transform: scale(2);
+		opacity: 0;
 	}
 }

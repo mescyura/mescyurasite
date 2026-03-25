@@ -18,6 +18,7 @@ import {
 	SiBootstrap,
 	SiSupabase,
 	SiPostgresql,
+	SiExpress,
 } from 'react-icons/si';
 
 import { TechItem } from '../components/techItem/TechItem';
@@ -104,8 +105,9 @@ export const Home = ({ translations, language }: Props) => {
 					<TechItem icon={SiJavascript} name='JavaScript' />
 					<TechItem icon={SiTypescript} name='TypeScript' />
 					<TechItem icon={SiReact} name='React.js' />
-					<TechItem icon={SiNodedotjs} name='Node.js' />
 					<TechItem icon={SiNextdotjs} name='Next.js' />
+					<TechItem icon={SiNodedotjs} name='Node.js' />
+					<TechItem icon={SiExpress} name='Express.js' />
 					<TechItem icon={VscVscode} name='VSCode' />
 					<TechItem icon={FiFigma} name='Figma' />
 					<TechItem icon={SiVercel} name='Vercel' />

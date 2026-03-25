@@ -173,7 +173,7 @@
 .startBox {
 	padding: 20px;
 	background-color: var(--hover);
-	border-radius: 0.375rem;
+	border-radius: 1.5rem;
 	text-align: center;
 }
 

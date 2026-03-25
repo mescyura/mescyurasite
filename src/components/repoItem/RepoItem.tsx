@@ -1,6 +1,3 @@
-import { motion } from 'framer-motion';
-import { AiOutlineStar } from 'react-icons/ai';
-import { BiGitRepoForked } from 'react-icons/bi';
 import { FiExternalLink } from 'react-icons/fi';
 import classes from './RepoItem.module.css';
 
@@ -16,18 +13,11 @@ interface RepoProps {
 	description: string;
 	stars: number;
 	forks: number;
-	language: 'TypeScript' | 'JavaScript';
+	language: 'TypeScript' | 'JavaScript' | 'HTML' | 'CSS';
 	homepage: string;
 }
 
-const RepoItem = ({
-	name,
-	description,
-	stars,
-	forks,
-	language,
-	homepage,
-}: RepoProps) => {
+const RepoItem = ({ name, description, language, homepage }: RepoProps) => {
 	return (
 		<div
 			className={classes.project}
@@ -41,46 +31,23 @@ const RepoItem = ({
 				{homepage === '' ||
 				homepage === null ||
 				name == 'mescyurasite' ? null : (
-					<>
-						<p>
-							<FiExternalLink />
-							<a href={homepage} target='_blank' rel='noreferrer'>
-								live
-							</a>
-						</p>
-						<span>/</span>
-					</>
+					<p className={classes.link}>
+						<FiExternalLink />
+						<a href={homepage} target='_blank' rel='noreferrer'>
+							Website
+						</a>
+					</p>
 				)}
-				<p>
+				<p className={classes.link}>
 					<FiExternalLink />
 					<a
 						href={`https://github.com/mescyura/${name}`}
 						target='_blank'
 						rel='noreferrer'
 					>
-						source
+						Github
 					</a>
 				</p>
-			</div>
-
-			<div className={classes.language_data}>
-				<div className={classes.language}>
-					<motion.div
-						className={classes.language_color}
-						style={{
-							background: Languages[language],
-							border: `solid 3px ${Languages[language]}`,
-						}}
-					/>
-					{language}
-				</div>
-
-				<div className={classes.stats}>
-					<AiOutlineStar className='mr-1 w-4 h-4' /> {stars}
-				</div>
-				<div className={classes.stats}>
-					<BiGitRepoForked className='mr-1 w-4 h-4' /> {forks}
-				</div>
 			</div>
 		</div>
 	);

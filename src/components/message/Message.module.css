@@ -1,7 +1,7 @@
 .message_wrapper {
 	flex-grow: 1;
 	width: 100%;
-	border-radius: 0.375rem;
+	border-radius: 1.5rem;
 	border: 1px solid var(--border);
 	/* background-color: var(--header); */
 	background-color: transparent;
@@ -14,7 +14,7 @@
 
 .message_sended {
 	padding: 1rem;
-	border-radius: 0.375rem;
+	border-radius: 1.5rem;
 	position: absolute;
 	/* background-color: var(--header); */
 	background-color: transparent;
@@ -32,7 +32,7 @@
 }
 
 .message_label {
-	margin-bottom: 0.25rem;
+	margin-bottom: 0.5rem;
 	font-size: 0.875rem;
 	line-height: 1.25rem;
 	font-weight: 700;
@@ -41,10 +41,10 @@
 .message_input,
 .message_textarea {
 	margin-bottom: 1rem;
-	border-radius: 0.375rem;
+	border-radius: 1.5rem;
 	background-color: var(--inputBg);
 	border: 1px solid var(--border);
-	padding: 0.5rem;
+	padding: 1rem;
 	font-size: 0.875rem;
 	line-height: 1.25rem;
 	color: var(--text);
@@ -74,7 +74,7 @@
 	align-items: center;
 	justify-content: center;
 	gap: 0.25rem;
-	border-radius: 9999px;
+	border-radius: 1.5rem;
 	border-width: 1px;
 	border-color: rgb(31, 41, 55);
 	padding-left: 1.25rem;

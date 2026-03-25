@@ -40,7 +40,7 @@ export interface Translations {
 		};
 		spotify: {
 			title: string;
-			not_listening: string;
+			listening: string;
 		};
 		not_found: {
 			title: string;

@@ -63,7 +63,7 @@ h1 {
 	gap: 0.5rem;
 	padding: 1rem;
 	border: 1px solid var(--border);
-	border-radius: 0.375rem;
+	border-radius: 1.5rem;
 	color: var(--text);
 	transition: 0.3s all ease;
 }
@@ -116,7 +116,7 @@ h1 {
 	height: 2.5rem;
 	width: 2.5rem;
 	padding: 0.5rem 0.5rem;
-	border-radius: 0.375rem;
+	border-radius: 1.5rem;
 	transition: 0.3s all ease-in-out;
 	cursor: pointer;
 }
@@ -129,7 +129,7 @@ h1 {
 	height: 2.5rem;
 	width: 2.5rem;
 	padding: 0.5rem 0.5rem;
-	border-radius: 0.375rem;
+	border-radius: 1.5rem;
 	background-color: var(--hover);
 	border: 1px solid var(--border);
 	cursor: pointer;
@@ -149,7 +149,7 @@ h1 {
 	height: 2rem;
 	width: 2rem;
 	padding: 0.25rem 0.25rem;
-	border-radius: 0.375rem;
+	border-radius: 1.5rem;
 	transition: 0.3s all ease-in-out;
 }
 
@@ -180,7 +180,7 @@ h1 {
 	font-weight: 600;
 	padding: 0.5rem;
 	background-color: var(--hover);
-	border-radius: 0.375rem;
+	border-radius: 1.5rem;
 }
 
 .description {
