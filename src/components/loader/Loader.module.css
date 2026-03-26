@@ -1,4 +1,4 @@
-/* .loader_overlay {
+.loader_overlay {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -60,11 +60,11 @@
 		transform: scale(1);
 		opacity: 1;
 	}
-} */
+}
 
 /* new loader */
 
-.container {
+/* .container {
 	position: fixed;
 	inset: 0;
 	background: var(--primary);
@@ -201,4 +201,4 @@
 	to {
 		transform: rotate(360deg);
 	}
-}
+} */
