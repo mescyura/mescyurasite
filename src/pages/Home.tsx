@@ -20,13 +20,13 @@ import {
 	SiPostgresql,
 	SiExpress,
 } from 'react-icons/si';
+import { motion } from 'framer-motion';
 
 import { TechItem } from '../components/techItem/TechItem';
 import RepoItem from '../components/repoItem/RepoItem';
 import { Translations } from '../interfaces';
 
 import img from '../assets/img.webp';
-import classes from './Home.module.css';
 
 const githubToken = import.meta.env.VITE_GITHUB_TOKEN;
 
@@ -78,25 +78,66 @@ export const Home = ({ translations, language }: Props) => {
 
 	return (
 		<>
-			<section className={classes.hero}>
-				<div className={classes.profile}>
-					<img src={img} alt='avatar' className={classes.profile_image} />
-					<h1>{translations[language].profile} 👋</h1>
-				</div>
-				<p className={classes.subtitle}>
+			<motion.section
+				className='w-full pb-8 pt-32 text-zinc-900 dark:text-zinc-50'
+				initial='hidden'
+				animate='show'
+				variants={{
+					hidden: { opacity: 0 },
+					show: { opacity: 1, transition: { staggerChildren: 0.06 } },
+				}}
+			>
+				<motion.div
+					className='mb-4 flex items-center gap-2'
+					variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+				>
+					<img
+						src={img}
+						alt='avatar'
+						className='h-12 w-12 rounded-full border border-zinc-900/10 object-cover dark:border-white/10'
+					/>
+					<h1 className='text-[26px] leading-none'>
+						{translations[language].profile} 👋
+					</h1>
+				</motion.div>
+				<motion.p
+					className='mb-8 text-sm text-zinc-700 dark:text-zinc-300'
+					variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+				>
 					{translations[language].profile_info}
-				</p>
-				<div className={classes.profile}>
-					<h1>{translations[language].hobby} 💭</h1>
-				</div>
-				<p className={classes.subtitle}>{translations[language].hobby_info}</p>
-				<div className={classes.profile}>
-					<h1>{translations[language].technologies} 💻</h1>
-				</div>
-				<p className={classes.subtitle}>
+				</motion.p>
+				<motion.div
+					className='mb-4 flex items-center gap-2'
+					variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+				>
+					<h1 className='text-[26px] leading-none'>
+						{translations[language].hobby} 💭
+					</h1>
+				</motion.div>
+				<motion.p
+					className='mb-8 text-sm text-zinc-700 dark:text-zinc-300'
+					variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+				>
+					{translations[language].hobby_info}
+				</motion.p>
+				<motion.div
+					className='mb-4 flex items-center gap-2'
+					variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+				>
+					<h1 className='text-[26px] leading-none'>
+						{translations[language].technologies} 💻
+					</h1>
+				</motion.div>
+				<motion.p
+					className='mb-8 text-sm text-zinc-700 dark:text-zinc-300'
+					variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+				>
 					{translations[language].technologies_info}
-				</p>
-				<div className={classes.tech_list}>
+				</motion.p>
+				<motion.div
+					className='mb-8 flex flex-wrap items-center justify-center gap-2 rounded-3xl border border-zinc-900/10 bg-white/60 p-2 backdrop-blur-xl dark:border-white/10 dark:bg-zinc-950/60'
+					variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+				>
 					<TechItem icon={SiHtml5} name='HTML5' />
 					<TechItem icon={SiCss3} name='CSS3' />
 					<TechItem icon={SiSass} name='Sass' />
@@ -116,32 +157,57 @@ export const Home = ({ translations, language }: Props) => {
 					<TechItem icon={SiSupabase} name='Supabase' />
 					<TechItem icon={SiMongodb} name='MongoDB' />
 					<TechItem icon={SiPostgresql} name='Postgresql' />
-				</div>
-				<div className={classes.profile}>
-					<h1>{translations[language].projects} 🛠️</h1>
-				</div>
-				<p className={classes.subtitle}>
+				</motion.div>
+				<motion.div
+					className='mb-4 flex items-center gap-2'
+					variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+				>
+					<h1 className='text-[26px] leading-none'>
+						{translations[language].projects} 🛠️
+					</h1>
+				</motion.div>
+				<motion.p
+					className='mb-8 text-sm text-zinc-700 dark:text-zinc-300'
+					variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+				>
 					{translations[language].projects_info}
-				</p>
-				<div className={classes.projects_list}>
+				</motion.p>
+				<motion.div
+					className='grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-2'
+					variants={{
+						hidden: { opacity: 0 },
+						show: { opacity: 1, transition: { staggerChildren: 0.06 } },
+					}}
+				>
 					{topRepos.length !== 0
 						? // eslint-disable-next-line @typescript-eslint/no-explicit-any
-							topRepos.map((repo: Record<string, any>) => {
+							topRepos.map((repo: Record<string, any>, idx: number) => {
+								const isLast = idx === topRepos.length - 1;
+								const shouldSpanFull = isLast && topRepos.length % 2 === 1;
+
 								return (
-									<RepoItem
+									<motion.div
 										key={repo.name}
-										name={repo.name}
-										description={repo.description}
-										stars={repo.stargazers_count}
-										forks={repo.forks_count}
-										language={repo.language}
-										homepage={repo.homepage}
-									/>
+										className={shouldSpanFull ? 'col-span-full' : undefined}
+										variants={{
+											hidden: { opacity: 0, y: 10 },
+											show: { opacity: 1, y: 0 },
+										}}
+									>
+										<RepoItem
+											name={repo.name}
+											description={repo.description}
+											stars={repo.stargazers_count}
+											forks={repo.forks_count}
+											language={repo.language}
+											homepage={repo.homepage}
+										/>
+									</motion.div>
 								);
 							})
 						: 'Loading...'}
-				</div>
-			</section>
+				</motion.div>
+			</motion.section>
 		</>
 	);
 };

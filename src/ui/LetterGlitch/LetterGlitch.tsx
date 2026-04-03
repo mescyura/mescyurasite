@@ -114,14 +114,14 @@ const LetterGlitch = ({
 					r: parseInt(result[1], 16),
 					g: parseInt(result[2], 16),
 					b: parseInt(result[3], 16),
-			  }
+				}
 			: null;
 	};
 
 	const interpolateColor = (
 		start: { r: number; g: number; b: number },
 		end: { r: number; g: number; b: number },
-		factor: number
+		factor: number,
 	) => {
 		const result = {
 			r: Math.round(start.r + (end.r - start.r) * factor),
@@ -225,7 +225,7 @@ const LetterGlitch = ({
 					letter.color = interpolateColor(
 						startRgb,
 						endRgb,
-						letter.colorProgress
+						letter.colorProgress,
 					);
 					needsRedraw = true;
 				}

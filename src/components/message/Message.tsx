@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { RiSendPlane2Fill } from 'react-icons/ri';
 import { ImSpinner2 } from 'react-icons/im';
 import { motion } from 'framer-motion';
-import classes from './Message.module.css';
 import { Translations } from '../../interfaces';
 
 const groupId = import.meta.env.VITE_GROUP_ID;
@@ -75,14 +74,14 @@ const Message = ({ translations, language }: Props) => {
 	};
 
 	return (
-		<div className={classes.message_wrapper}>
+		<div className='relative min-h-86 w-full flex-1 rounded-3xl border border-zinc-900/10 bg-white/60 p-4 backdrop-blur-xl dark:border-white/10 dark:bg-zinc-950/60'>
 			{messageSent && (
 				<motion.div
 					key={'contactThankYou'}
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{ duration: 0.25, ease: 'easeOut' }}
-					className={classes.message_sended}
+					className='absolute inset-0 z-10 flex items-center justify-center rounded-3xl p-4 text-center text-zinc-900 dark:text-zinc-50'
 				>
 					{translations[language].contact_me.thanks}
 				</motion.div>
@@ -96,7 +95,7 @@ const Message = ({ translations, language }: Props) => {
 					exit={{ opacity: 0 }}
 					transition={{ duration: 0.25, ease: 'easeOut' }}
 				>
-					<h1 className={classes.message_label}>
+					<h1 className='mb-2 text-sm font-bold leading-5 text-zinc-900 dark:text-zinc-50'>
 						{translations[language].contact_me.email}
 					</h1>
 					<input
@@ -104,31 +103,34 @@ const Message = ({ translations, language }: Props) => {
 						type='text'
 						value={email}
 						onChange={e => setEmail(e.target.value)}
-						className={classes.message_input}
+						className='mb-4 w-full rounded-3xl border border-zinc-900/10 bg-black/5 p-4 text-sm leading-5 text-zinc-900 outline-none transition-colors focus:border-zinc-900/30 dark:border-white/10 dark:bg-white/10 dark:text-zinc-50 dark:focus:border-white/30'
 					/>
 
-					<h1 className={classes.message_label}>
+					<h1 className='mb-2 text-sm font-bold leading-5 text-zinc-900 dark:text-zinc-50'>
 						{translations[language].contact_me.message}
 					</h1>
 					<textarea
 						placeholder={translations[language].contact_me.message_placehorder}
 						value={message}
 						onChange={e => setMessage(e.target.value)}
-						className={classes.message_textarea}
+						className='mb-4 min-h-36 w-full rounded-3xl border border-zinc-900/10 bg-black/5 p-4 text-sm leading-5 text-zinc-900 outline-none transition-colors focus:border-zinc-900/30 dark:border-white/10 dark:bg-white/10 dark:text-zinc-50 dark:focus:border-white/30'
 					/>
 
-					<div className={classes.message_btn_wrapper}>
-						<p className={classes.message_text}>{errMsg}</p>
+					<div className='flex w-full items-center justify-between gap-3'>
+						<p className='text-xs leading-5 text-red-500/80'>{errMsg}</p>
 
-						<button onClick={sendMessage} className={classes.message_btn}>
+						<button
+							onClick={sendMessage}
+							className='flex items-center justify-center gap-1 rounded-full bg-zinc-900 px-5 py-2 text-sm font-medium text-white transition-transform hover:-translate-y-0.5 dark:bg-zinc-50 dark:text-zinc-900'
+						>
 							<span className='mt-[2px]'>
 								{translations[language].contact_me.send}
 							</span>
 							{!sending && (
-								<RiSendPlane2Fill className={classes.message_btn_icon_send} />
+								<RiSendPlane2Fill />
 							)}
 							{sending && (
-								<ImSpinner2 className={classes.message_btn_icon_spinner} />
+								<ImSpinner2 className='ml-2 h-4 w-4 animate-spin' />
 							)}
 						</button>
 					</div>

@@ -1,116 +1,51 @@
 import { useEffect } from 'react';
-import classes from './Loader.module.css';
+import { motion } from 'framer-motion';
 
 type Props = {
 	onFinish: () => void;
+	language: string;
 };
 
-const Loader = ({ onFinish }: Props) => {
+const Loader = ({ onFinish, language }: Props) => {
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			onFinish();
 		}, 1000);
 
 		return () => clearTimeout(timer);
-	}, []);
+	}, [onFinish]);
 
 	return (
-		<div className={classes.loader_overlay}>
-			<div className={classes.spinner}>
-				<div className={classes.spinner_circle}></div>
-				<div className={classes.spinner_circle}></div>
-				<div className={classes.spinner_circle}></div>
+		<motion.div
+			className='fixed inset-0 z-9999 flex origin-top items-center justify-center bg-white/70 backdrop-blur-xl dark:bg-zinc-950/60'
+			initial={{ opacity: 0, y: 0, scaleY: 1 }}
+			animate={{ opacity: 1, y: 0, scaleY: 1 }}
+			exit={{ opacity: 0, y: '-100%', scaleY: 0.85 }}
+			transition={{ duration: 0.45, ease: 'easeInOut' }}
+		>
+			<div className='flex flex-col items-center justify-center gap-5'>
+				<div className='flex items-center justify-center gap-2'>
+					{[0, 1, 2].map(i => (
+						<motion.div
+							key={`bubble-${i}`}
+							className='h-2.5 w-2.5 rounded-full bg-zinc-900/80 dark:bg-zinc-50/80'
+							animate={{ y: [0, -6, 0], scale: [1, 1.15, 1], opacity: [0.55, 1, 0.55] }}
+							transition={{
+								duration: 0.9,
+								repeat: Infinity,
+								ease: 'easeInOut',
+								delay: i * 0.12,
+							}}
+						/>
+					))}
+				</div>
+
+				<p className='text-xs font-medium tracking-wide text-zinc-700 dark:text-zinc-300'>
+					{language === 'ua' ? 'Завантаження…' : 'Loading…'}
+				</p>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 
 export default Loader;
-
-//new loader
-
-// import { useEffect, useState } from 'react';
-// import classes from './Loader.module.css';
-// import Disc from './Disc';
-
-// type Props = {
-// 	onFinish: () => void;
-// };
-
-// export default function Loader({ onFinish }: Props) {
-// 	const [started, setStarted] = useState(false);
-// 	const [phase, setPhase] = useState<'boot' | 'disk' | 'ready'>('boot');
-// 	const [progress, setProgress] = useState(0);
-
-// 	useEffect(() => {
-// 		if (!started) return;
-
-// 		const audio = new Audio('/ps1.mp3');
-// 		audio.volume = 0.4;
-// 		audio.play().catch(() => {});
-
-// 		// 0–2с → boot
-// 		setTimeout(() => setPhase('disk'), 2000);
-
-// 		// 2–13с → диск крутиться
-// 		const duration = 8000;
-// 		const start = Date.now();
-
-// 		const interval = setInterval(() => {
-// 			const elapsed = Date.now() - start;
-// 			const percent = Math.min((elapsed / duration) * 100, 100);
-// 			setProgress(Math.floor(percent));
-
-// 			if (percent >= 100) {
-// 				clearInterval(interval);
-// 				setPhase('ready');
-// 				setTimeout(() => onFinish(), 1000);
-// 			}
-// 		}, 100);
-
-// 		return () => clearInterval(interval);
-// 	}, [started, onFinish]);
-
-// 	if (!started) {
-// 		return (
-// 			<div className={classes.overlay} onClick={() => setStarted(true)}>
-// 				<div className={classes.startBox}>
-// 					<p className={classes.start}>▶ Power On</p>
-// 				</div>
-// 			</div>
-// 		);
-// 	}
-
-// 	return (
-// 		<div
-// 			className={`${classes.container} ${phase === 'ready' ? classes.fadeOut : ''}`}
-// 		>
-// 			<div className={classes.crt} />
-
-// 			{phase === 'boot' && (
-// 				<div className={classes.boot}>
-// 					<p className={classes.bootSub}>Initializing...</p>
-// 				</div>
-// 			)}
-
-// 			{phase === 'disk' && (
-// 				<div className={classes.content}>
-// 					{/* <svg className={classes.diskSvg}>
-// 						<use href={image + '#svg1681'} />
-// 					</svg> */}
-
-// 					<Disc className={classes.diskSvg} />
-
-// 					<p className={classes.status}>Loading system...</p>
-// 					<div className={classes.progressBar}>
-// 						<div
-// 							className={classes.progressFill}
-// 							style={{ width: `${progress}%` }}
-// 						/>
-// 					</div>
-// 					<p className={classes.percent}>{progress}%</p>
-// 				</div>
-// 			)}
-// 		</div>
-// 	);
-// }
