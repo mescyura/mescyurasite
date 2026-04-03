@@ -3,12 +3,13 @@ import { Translations } from '../../interfaces';
 import { ThemeToggle } from '../../ui/ThemeToggle/ThemeToggle';
 import { LanguageToggle } from '../../ui/LanguageToggle/LanguageToggle';
 import { Link, useLocation } from 'react-router-dom';
-import { SiGithub, SiLinkedin, SiSpotify } from 'react-icons/si';
+import { SiGithub, SiSpotify } from 'react-icons/si';
 import { FiMail } from 'react-icons/fi';
 import { useEffect, useState, type ReactElement } from 'react';
 import { HiMenu, HiX } from 'react-icons/hi';
 import { AnimatePresence, motion } from 'framer-motion';
 import classNames from 'classnames';
+import { FaLinkedin } from 'react-icons/fa';
 
 const MobileLandingButton = ({
 	name,
@@ -152,7 +153,7 @@ export const Header = ({
 					<LinkButton
 						href='https://linkedin.com/in/yura-holyda'
 						icon={
-							<SiLinkedin className='h-5 w-5 text-zinc-400 transition-colors group-hover:text-zinc-900 dark:group-hover:text-zinc-50' />
+							<FaLinkedin className='h-5 w-5 text-zinc-400 transition-colors group-hover:text-zinc-900 dark:group-hover:text-zinc-50' />
 						}
 					/>
 
@@ -239,7 +240,7 @@ export const Header = ({
 								<LinkButton
 									href='https://linkedin.com/in/yura-holyda'
 									icon={
-										<SiLinkedin className='h-5 w-5 text-zinc-400 transition-colors group-hover:text-zinc-900 dark:group-hover:text-zinc-50' />
+										<FaLinkedin className='h-5 w-5 text-zinc-400 transition-colors group-hover:text-zinc-900 dark:group-hover:text-zinc-50' />
 									}
 									onClick={() => setMenuOpen(false)}
 								/>

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { FiFigma } from 'react-icons/fi';
 import { VscVscode } from 'react-icons/vsc';
 import {
-	SiCss3,
+	SiCss,
 	SiGit,
 	SiHtml5,
 	SiJavascript,
@@ -139,7 +139,7 @@ export const Home = ({ translations, language }: Props) => {
 					variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
 				>
 					<TechItem icon={SiHtml5} name='HTML5' />
-					<TechItem icon={SiCss3} name='CSS3' />
+					<TechItem icon={SiCss} name='CSS3' />
 					<TechItem icon={SiSass} name='Sass' />
 					<TechItem icon={SiTailwindcss} name='Tailwind' />
 					<TechItem icon={SiBootstrap} name='Bootstrap' />
