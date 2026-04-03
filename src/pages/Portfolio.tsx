@@ -177,7 +177,7 @@ export const PortfolioItem = ({
 					<img
 						src={view ? mobile : desktop}
 						alt={`${project.name} preview`}
-						className='h-auto w-full max-h-[300px] object-contain'
+						className='h-auto w-full max-h-[200px] object-contain'
 						loading={priority ? 'eager' : 'lazy'}
 						decoding='async'
 						fetchpriority={priority ? 'high' : 'low'}
