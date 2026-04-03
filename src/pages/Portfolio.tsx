@@ -11,11 +11,36 @@ import todod from '../assets/todoapp-desktop.webp';
 import todom from '../assets/todoapp-mobile.webp';
 import { CiDesktop, CiMobile1 } from 'react-icons/ci';
 import { useCallback, useState } from 'react';
-import { FiExternalLink } from 'react-icons/fi';
-import { motion } from 'framer-motion';
+import { FiExternalLink, FiX } from 'react-icons/fi';
+import { AnimatePresence, motion, type Variants } from 'framer-motion';
+
+const portfolioModalMotion: Variants = {
+	hidden: {
+		opacity: 0,
+		y: '-100%',
+		filter: 'blur(14px)',
+	},
+	visible: {
+		opacity: 1,
+		y: 0,
+		filter: 'blur(0px)',
+		transition: {
+			duration: 0.48,
+			ease: [0.22, 1, 0.36, 1],
+		},
+	},
+	leave: {
+		opacity: 0,
+		y: '-35%',
+		filter: 'blur(12px)',
+		transition: {
+			duration: 0.36,
+			ease: [0.45, 0, 0.55, 1],
+		},
+	},
+};
 
 interface PortfolioItemModalProps {
-	isOpen: boolean;
 	view: boolean;
 	mobile?: string;
 	desktop?: string;
@@ -24,7 +49,6 @@ interface PortfolioItemModalProps {
 }
 
 export const PortfolioItemModal = ({
-	isOpen,
 	view,
 	mobile,
 	desktop,
@@ -32,54 +56,65 @@ export const PortfolioItemModal = ({
 	onClose,
 }: PortfolioItemModalProps) => {
 	return (
-		<div
-			className={`fixed inset-0 z-1000 flex items-center justify-center bg-black/70 transition-opacity ${
-				isOpen ? 'opacity-100' : 'pointer-events-none opacity-0'
-			}`}
+		<motion.div
+			className='fixed inset-0 z-1000 flex h-full w-full flex-col items-center justify-center gap-4 overflow-hidden border border-zinc-900/10 bg-white px-4 py-10 will-change-transform dark:border-white/10 dark:bg-zinc-950'
+			variants={portfolioModalMotion}
+			initial='hidden'
+			animate='visible'
+			exit='leave'
+			role='dialog'
+			aria-modal='true'
+			aria-label='Project preview'
 		>
-			<div className='relative flex h-full w-full flex-col items-center justify-center gap-4 border border-zinc-900/10 bg-white p-10 dark:border-white/10 dark:bg-zinc-950 sm:p-10'>
-				<button
-					className='absolute right-4 top-4 text-2xl text-zinc-900 dark:text-zinc-50'
-					onClick={onClose}
-					aria-label='close modal'
-				>
-					×
-				</button>
-				<div className='flex items-center justify-center gap-2'>
-					{desktop && (
-						<CiDesktop
-							onClick={() => setPicture('desktop')}
-							className={
-								view
-									? 'h-10 w-10 cursor-pointer rounded-full p-2 text-zinc-500 hover:bg-black/5 dark:text-zinc-400 dark:hover:bg-white/10'
-									: 'h-10 w-10 cursor-pointer rounded-full border border-zinc-900/10 bg-black/5 p-2 text-zinc-900 dark:border-white/10 dark:bg-white/10 dark:text-zinc-50'
-							}
-						/>
-					)}
-					{mobile && (
-						<CiMobile1
-							onClick={() => setPicture('mobile')}
-							className={
-								view
-									? 'h-10 w-10 cursor-pointer rounded-full border border-zinc-900/10 bg-black/5 p-2 text-zinc-900 dark:border-white/10 dark:bg-white/10 dark:text-zinc-50'
-									: 'h-10 w-10 cursor-pointer rounded-full p-2 text-zinc-500 hover:bg-black/5 dark:text-zinc-400 dark:hover:bg-white/10'
-							}
-						/>
-					)}
-				</div>
-				<div className='flex h-[80%] select-none items-center justify-center overflow-hidden'>
-					<img
+			<button
+				type='button'
+				className='absolute right-4 top-4 z-10 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full text-zinc-900 transition-colors hover:bg-black/5 dark:text-zinc-50 dark:hover:bg-white/10'
+				onClick={onClose}
+				aria-label='close modal'
+			>
+				<FiX className='h-6 w-6 stroke-[2.5]' aria-hidden />
+			</button>
+			<div className='flex items-center justify-center gap-2'>
+				{desktop && (
+					<CiDesktop
+						onClick={() => setPicture('desktop')}
+						className={
+							view
+								? 'h-10 w-10 cursor-pointer rounded-full p-2 text-zinc-500 hover:bg-black/5 dark:text-zinc-400 dark:hover:bg-white/10'
+								: 'h-10 w-10 cursor-pointer rounded-full border border-zinc-900/10 bg-black/5 p-2 text-zinc-900 dark:border-white/10 dark:bg-white/10 dark:text-zinc-50'
+						}
+					/>
+				)}
+				{mobile && (
+					<CiMobile1
+						onClick={() => setPicture('mobile')}
+						className={
+							view
+								? 'h-10 w-10 cursor-pointer rounded-full border border-zinc-900/10 bg-black/5 p-2 text-zinc-900 dark:border-white/10 dark:bg-white/10 dark:text-zinc-50'
+								: 'h-10 w-10 cursor-pointer rounded-full p-2 text-zinc-500 hover:bg-black/5 dark:text-zinc-400 dark:hover:bg-white/10'
+						}
+					/>
+				)}
+			</div>
+			<div className='flex h-[80%] min-h-0 w-full select-none items-center justify-center overflow-hidden'>
+				<AnimatePresence mode='wait' initial={false}>
+					<motion.img
+						key={view ? 'mobile' : 'desktop'}
 						src={view ? mobile : desktop}
 						alt=''
 						className='h-full w-full object-contain'
+						initial={{ opacity: 0, scale: 0.98 }}
+						animate={{ opacity: 1, scale: 1 }}
+						exit={{ opacity: 0, scale: 0.98 }}
+						transition={{ duration: 0.2, ease: 'easeOut' }}
 						loading='eager'
 						decoding='async'
 						fetchpriority='high'
 						sizes='85vw'
 					/>
-				</div>
+				</AnimatePresence>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 
@@ -222,16 +257,18 @@ export const PortfolioItem = ({
 					{project.description}
 				</p>
 			</motion.div>
-			{isModalOpen && (
-				<PortfolioItemModal
-					isOpen={isModalOpen}
-					view={view}
-					mobile={mobile}
-					desktop={desktop}
-					setPicture={setPicture}
-					onClose={modalCLose}
-				/>
-			)}
+			<AnimatePresence>
+				{isModalOpen && (
+					<PortfolioItemModal
+						key={project.name}
+						view={view}
+						mobile={mobile}
+						desktop={desktop}
+						setPicture={setPicture}
+						onClose={modalCLose}
+					/>
+				)}
+			</AnimatePresence>
 		</>
 	);
 };
