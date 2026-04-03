@@ -11,7 +11,7 @@
 - **Маршрутизація**: `react-router-dom`
 - **UI / анімації**: CSS Modules, кастомні анімації, `framer-motion`, `react-icons`
 - **Аналітика**: `@vercel/analytics`, `@vercel/speed-insights`
-- **Інше**: `axios`, `three`, `use-lanyard`, тултіпи (`@tippyjs/react`, `react-tooltip`)
+- **Інше**: `use-lanyard`, тултіпи (`@tippyjs/react`, `react-tooltip`)
 
 ---
 
