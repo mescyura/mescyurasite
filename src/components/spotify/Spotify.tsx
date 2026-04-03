@@ -1,3 +1,4 @@
+import { useTilt } from '../../hooks/useTilt';
 import { Translations } from '../../interfaces';
 import { useEffect, useRef, useState } from 'react';
 
@@ -24,6 +25,7 @@ export const Spotify = ({ translations, language }: Props) => {
 	const [spotify, setSpotify] = useState<SpotifyData | null>(null);
 	const [progress, setProgress] = useState(0);
 	const [currentTime, setCurrentTime] = useState(0);
+	const tilt = useTilt();
 
 	const rafRef = useRef<number | null>(null);
 	const lastSecondRef = useRef<number>(-1);
@@ -108,14 +110,20 @@ export const Spotify = ({ translations, language }: Props) => {
 		: 0;
 
 	return (
-		<div className='flex w-full flex-col gap-2 self-start sm:w-auto'>
+		<div
+			ref={tilt.ref}
+			onMouseMove={tilt.onMouseMove}
+			onMouseLeave={tilt.onMouseLeave}
+			style={tilt.style}
+			className='flex w-full flex-col gap-2 self-start sm:w-auto'
+		>
 			{spotify ? (
 				<a
 					href={`https://open.spotify.com/track/${spotify.track_id}`}
 					target='_blank'
 					rel='noreferrer'
 				>
-					<div className='flex h-[65px] w-full max-w-full items-center gap-3 rounded-2xl bg-black/5 px-4 py-2 backdrop-blur transition-transform duration-200 hover:scale-[1.01] dark:bg-white/10 sm:w-[300px] sm:max-w-[300px]'>
+					<div className='flex h-[65px] w-full max-w-full items-center gap-3 rounded-2xl bg-black/5 px-4 py-2 backdrop-blur dark:bg-white/10 sm:w-[300px] sm:max-w-[300px]'>
 						<div className='flex h-[30px] items-end gap-0.5 self-center'>
 							{[...Array(8)].map((_, i) => (
 								<div

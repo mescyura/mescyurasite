@@ -1,4 +1,5 @@
 import { FiExternalLink } from 'react-icons/fi';
+import { useTilt } from '../../hooks/useTilt';
 
 const Languages = {
 	TypeScript: '#3178c6',
@@ -17,11 +18,18 @@ interface RepoProps {
 }
 
 const RepoItem = ({ name, description, language, homepage }: RepoProps) => {
+	const tilt = useTilt();
+
 	return (
 		<div
+			ref={tilt.ref}
+			onMouseMove={tilt.onMouseMove}
+			onMouseLeave={tilt.onMouseLeave}
+			// style={tilt.style}
 			className='flex h-36 flex-col items-start rounded-3xl border border-zinc-900/10 bg-white/60 p-4 text-zinc-900 backdrop-blur-xl transition-transform hover:-translate-y-0.5 dark:border-white/10 dark:bg-zinc-950/60 dark:text-zinc-50'
 			style={{
 				borderLeft: `solid 4px ${Languages[language]}`,
+				...tilt.style
 			}}
 		>
 			<h1 className='mb-1 text-base font-semibold leading-5'>{name}</h1>
@@ -52,6 +60,6 @@ const RepoItem = ({ name, description, language, homepage }: RepoProps) => {
 			</div>
 		</div>
 	);
-};
+};;
 
 export default RepoItem;

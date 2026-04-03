@@ -89,7 +89,10 @@ export const Home = ({ translations, language }: Props) => {
 			>
 				<motion.div
 					className='mb-4 flex items-center gap-2'
-					variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+					variants={{
+						hidden: { opacity: 0, y: 10 },
+						show: { opacity: 1, y: 0 },
+					}}
 				>
 					<img
 						src={img}
@@ -102,13 +105,19 @@ export const Home = ({ translations, language }: Props) => {
 				</motion.div>
 				<motion.p
 					className='mb-8 text-sm text-zinc-700 dark:text-zinc-300'
-					variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+					variants={{
+						hidden: { opacity: 0, y: 10 },
+						show: { opacity: 1, y: 0 },
+					}}
 				>
 					{translations[language].profile_info}
 				</motion.p>
 				<motion.div
 					className='mb-4 flex items-center gap-2'
-					variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+					variants={{
+						hidden: { opacity: 0, y: 10 },
+						show: { opacity: 1, y: 0 },
+					}}
 				>
 					<h1 className='text-[26px] leading-none'>
 						{translations[language].hobby} 💭
@@ -116,13 +125,19 @@ export const Home = ({ translations, language }: Props) => {
 				</motion.div>
 				<motion.p
 					className='mb-8 text-sm text-zinc-700 dark:text-zinc-300'
-					variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+					variants={{
+						hidden: { opacity: 0, y: 10 },
+						show: { opacity: 1, y: 0 },
+					}}
 				>
 					{translations[language].hobby_info}
 				</motion.p>
 				<motion.div
 					className='mb-4 flex items-center gap-2'
-					variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+					variants={{
+						hidden: { opacity: 0, y: 10 },
+						show: { opacity: 1, y: 0 },
+					}}
 				>
 					<h1 className='text-[26px] leading-none'>
 						{translations[language].technologies} 💻
@@ -130,13 +145,19 @@ export const Home = ({ translations, language }: Props) => {
 				</motion.div>
 				<motion.p
 					className='mb-8 text-sm text-zinc-700 dark:text-zinc-300'
-					variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+					variants={{
+						hidden: { opacity: 0, y: 10 },
+						show: { opacity: 1, y: 0 },
+					}}
 				>
 					{translations[language].technologies_info}
 				</motion.p>
 				<motion.div
 					className='mb-8 flex flex-wrap items-center justify-center gap-2 rounded-3xl border border-zinc-900/10 bg-white/60 p-2 backdrop-blur-xl dark:border-white/10 dark:bg-zinc-950/60'
-					variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+					variants={{
+						hidden: { opacity: 0, y: 10 },
+						show: { opacity: 1, y: 0 },
+					}}
 				>
 					<TechItem icon={SiHtml5} name='HTML5' />
 					<TechItem icon={SiCss} name='CSS3' />
@@ -160,7 +181,10 @@ export const Home = ({ translations, language }: Props) => {
 				</motion.div>
 				<motion.div
 					className='mb-4 flex items-center gap-2'
-					variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+					variants={{
+						hidden: { opacity: 0, y: 10 },
+						show: { opacity: 1, y: 0 },
+					}}
 				>
 					<h1 className='text-[26px] leading-none'>
 						{translations[language].projects} 🛠️
@@ -168,7 +192,10 @@ export const Home = ({ translations, language }: Props) => {
 				</motion.div>
 				<motion.p
 					className='mb-8 text-sm text-zinc-700 dark:text-zinc-300'
-					variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+					variants={{
+						hidden: { opacity: 0, y: 10 },
+						show: { opacity: 1, y: 0 },
+					}}
 				>
 					{translations[language].projects_info}
 				</motion.p>

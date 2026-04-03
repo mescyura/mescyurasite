@@ -17,7 +17,7 @@ export const NotFound = ({ translations, language }: Props) => {
 			transition={{ duration: 0.25, ease: 'easeOut' }}
 		>
 			<motion.div
-				className='relative z-10 mx-auto flex w-full max-w-4xl flex-col items-start gap-8'
+				className='relative z-10 mx-auto flex w-full max-w-4xl flex-col items-start'
 				initial='hidden'
 				animate='show'
 				variants={{
@@ -32,13 +32,19 @@ export const NotFound = ({ translations, language }: Props) => {
 						backgroundSize: 'contain',
 						backgroundPosition: '100px 20px',
 					}}
-					variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+					variants={{
+						hidden: { opacity: 0, y: 10 },
+						show: { opacity: 1, y: 0 },
+					}}
 				>
 					404
 				</motion.h1>
 				<motion.div
 					className='max-w-2xl'
-					variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+					variants={{
+						hidden: { opacity: 0, y: 10 },
+						show: { opacity: 1, y: 0 },
+					}}
 				>
 					<h1 className='mb-3 text-[clamp(2rem,3vw,2.6rem)] font-semibold leading-tight'>
 						{translations[language].not_found.title}

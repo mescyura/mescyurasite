@@ -37,7 +37,9 @@ export const Contact = ({ translations, language }: Props) => {
 			>
 				{translations[language].chat_info}
 			</motion.p>
-			<motion.div variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}>
+			<motion.div
+				variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+			>
 				<TimeStatus translations={translations} language={language} />
 			</motion.div>
 			<motion.div
@@ -49,7 +51,10 @@ export const Contact = ({ translations, language }: Props) => {
 			>
 				<motion.div
 					className='w-full flex-1'
-					variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+					variants={{
+						hidden: { opacity: 0, y: 10 },
+						show: { opacity: 1, y: 0 },
+					}}
 				>
 					<Message translations={translations} language={language} />
 				</motion.div>
@@ -60,31 +65,57 @@ export const Contact = ({ translations, language }: Props) => {
 						show: { opacity: 1, transition: { staggerChildren: 0.06 } },
 					}}
 				>
-					<motion.div variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}>
+					<motion.div
+						variants={{
+							hidden: { opacity: 0, y: 10 },
+							show: { opacity: 1, y: 0 },
+						}}
+					>
 						<ContactLink
 							name='@mescyura'
-							icon={<SiDiscord className='h-6 w-6' style={{ color: '#5865F2' }} />}
+							icon={
+								<SiDiscord className='h-6 w-6' style={{ color: '#5865F2' }} />
+							}
 							link='https://discord.com/users/316947490991636482'
 						/>
 					</motion.div>
 
-					<motion.div variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}>
+					<motion.div
+						variants={{
+							hidden: { opacity: 0, y: 10 },
+							show: { opacity: 1, y: 0 },
+						}}
+					>
 						<ContactLink
 							name='@mescyura'
-							icon={<SiTelegram className='h-6 w-6' style={{ color: '#24A1DE' }} />}
+							icon={
+								<SiTelegram className='h-6 w-6' style={{ color: '#24A1DE' }} />
+							}
 							link='https://t.me/mescyura'
 						/>
 					</motion.div>
 
-					<motion.div variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}>
+					<motion.div
+						variants={{
+							hidden: { opacity: 0, y: 10 },
+							show: { opacity: 1, y: 0 },
+						}}
+					>
 						<ContactLink
 							name='mescyura@gmail.com'
-							icon={<FiMail className='h-6 w-6 text-zinc-500 dark:text-zinc-400' />}
+							icon={
+								<FiMail className='h-6 w-6 text-zinc-500 dark:text-zinc-400' />
+							}
 							link='mailto:mescyura@gmail.com'
 						/>
 					</motion.div>
 
-					<motion.div variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}>
+					<motion.div
+						variants={{
+							hidden: { opacity: 0, y: 10 },
+							show: { opacity: 1, y: 0 },
+						}}
+					>
 						<ContactLink
 							name={translations[language].download_cv}
 							icon={
