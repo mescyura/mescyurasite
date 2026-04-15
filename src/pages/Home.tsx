@@ -49,6 +49,7 @@ async function getStaticProps() {
 		'tetris',
 		'shop-bakery',
 		'pokemon-dex',
+		'calc-daily-flow',
 	];
 
 	const topRepos = repos
