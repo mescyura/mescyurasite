@@ -42,6 +42,7 @@ async function getStaticProps() {
 
 	const orderedRepos = [
 		'mescyurasite',
+		'calc-daily-flow',
 		'todo-list-app',
 		'quick-notes-app',
 		'react-calculator',
@@ -49,7 +50,6 @@ async function getStaticProps() {
 		'tetris',
 		'shop-bakery',
 		'pokemon-dex',
-		'calc-daily-flow',
 	];
 
 	const topRepos = repos
