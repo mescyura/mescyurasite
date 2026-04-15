@@ -49,6 +49,7 @@ async function getStaticProps() {
 		'rock-paper-scissors',
 		'tetris',
 		'shop-bakery',
+		'agency-react-tw',
 		'pokemon-dex',
 	];
 

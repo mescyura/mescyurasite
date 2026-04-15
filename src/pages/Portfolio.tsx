@@ -109,7 +109,7 @@ export const PortfolioItemModal = ({
 						transition={{ duration: 0.2, ease: 'easeOut' }}
 						loading='eager'
 						decoding='async'
-						fetchpriority='high'
+						fetchPriority='high'
 						sizes='85vw'
 					/>
 				</AnimatePresence>
@@ -215,7 +215,7 @@ export const PortfolioItem = ({
 						className='h-auto w-full max-h-[200px] object-contain'
 						loading={priority ? 'eager' : 'lazy'}
 						decoding='async'
-						fetchpriority={priority ? 'high' : 'low'}
+						fetchPriority={priority ? 'high' : 'low'}
 						sizes={GRID_IMG_SIZES}
 					/>
 				</div>
